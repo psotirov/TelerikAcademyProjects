@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 4 - Task 1</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 4 - Task 1</h1>
+        <h3>Creates an Array of 20 integers and each element has value of its index * 5</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var arr = new Array(20); // creates an array
+            for (var i=0; i < arr.length; i++) { // iterates through its elements 
+                arr[i] = i * 5; // assigns element value
+            }
+            var result = "The array is " + arr.join(", "); // prepares the output
+ 
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+    </script>
+</body>
+</html>
+
+ 

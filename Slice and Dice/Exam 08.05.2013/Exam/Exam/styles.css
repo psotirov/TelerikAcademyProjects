@@ -1,0 +1,225 @@
+﻿body, div, ul, li, img, a, p, h1, h2, h3 {
+    margin:0;
+    padding:0;
+}
+header, nav, section, article, footer {
+    margin:0;
+    padding:0;
+}
+body {
+    background-color: #fff;
+}
+#header-wrapper {
+    background: #2993c4; /* Old browsers */
+    background: -moz-linear-gradient(top,  #2993c4 1%, #c2ced3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#2993c4), color-stop(100%,#c2ced3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #2993c4 1%,#c2ced3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #2993c4 1%,#c2ced3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #2993c4 1%,#c2ced3 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #2993c4 1%,#c2ced3 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2993c4', endColorstr='#c2ced3',GradientType=0 ); /* IE6-9 */
+    position:relative;
+    color:#fff;
+    font-family:serif;
+    text-align:center;
+    text-shadow:2px 2px #186387;
+}
+#header-wrapper header{
+    padding-top: 50px;
+}
+#logo {
+    font-family:sans-serif;
+    font-weight: lighter;
+    display:inline;
+}
+ul#nav, nav {
+    list-style-type:none;
+    display:inline;
+    overflow:hidden;
+}
+ul#nav li a {
+    display:block;
+    display:inline-block;
+    text-decoration:none;
+    border:1px solid transparent;
+    color:#fff;
+    padding:10px 15px;
+}
+ul#nav li a:hover {
+    padding:10px 15px;
+    border-color:#446f83;
+    border-radius:4px;
+    background-color:#186387;
+}
+#slider h2 {
+    margin-top:70px;
+    font-size:48px;
+}
+#slider p {
+    font-size:24px;
+    margin-bottom:50px;
+}
+#slider img {
+    width:100%;
+}
+.left-arrow {
+    position:absolute;
+    top:50%;
+    left:0;
+}
+.right-arrow {
+    position:absolute;
+    top:50%;
+    right:0;
+}
+#columns section {
+    float:left;
+    width:29%;
+    padding-top:70px;
+    padding-bottom:90px;
+    margin-right:5%;
+}
+#columns #colright {
+    margin-right:0px;
+}
+#columns img {
+    display:block;
+    margin:0 auto;
+}
+#columns h3 {
+    color:#a3a2a2;
+    font-size:18px;
+    font-weight: normal;
+    margin-top:32px;
+    margin-bottom:18px;
+}
+#columns p {
+    color:#555;
+    height:170px;
+    line-height:24px;
+    overflow:hidden;
+}
+#columns footer {
+    margin-top:24px;
+    text-align:right;
+}
+#columns footer a {
+    display:block;
+    display:inline-block;
+    text-decoration:none;
+    background-color:#f4f4f4;
+    border:1px solid #e0dddd;
+    border-radius:4px;
+    color:#9a9999;
+    padding:10px 15px;
+}
+#columns footer a:hover {
+    color:#fff;
+    border-color:#44758c;
+    background-color:#186f96;
+}
+#columns::after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+body>footer {
+    position:relative;
+}
+body>footer p {
+    margin: 50px 100px;
+    color:#555e58;
+    font-size:18px;
+    line-height:24px;
+    text-align:center;
+}
+body>footer p::first-line {
+    font-size:24px;
+}
+body>footer .quotes {
+    position:absolute;
+    left:0;
+    top:0;
+    width:44px;
+    height:26px;
+    background: #fff url('images/small-quotes.png') no-repeat left top;
+}
+body>footer #rightquote {
+    left:auto;
+    right:0;
+    background-position: right top;
+}
+@media only screen and (max-width:1600px) {
+    #header-wrapper header, body>article, body>footer {
+        width: 960px;
+        margin:0 auto;
+        font-size:12px;
+    }
+    #logo {
+        font-size: 36px;
+        margin-right:30px;
+    }
+    ul#nav li {
+        display:inline;
+    }
+}
+@media only screen and (max-width:960px) {
+    #header-wrapper header, body>article, body>footer {
+        width: 768px;
+        /*font-size:14px;*/
+        position:relative;
+    }
+    #nav .extended {
+        display:none;
+    }
+    #logo {
+        font-size: 32px;
+        margin-right:10px;
+    }
+}
+@media only screen and (max-width:770px) {
+    #header-wrapper header, body>article, body>footer {
+        width: 480px;
+    }
+    #logo {
+        display:block;
+        margin:0 auto;
+        padding-bottom:25px;
+    }
+    ul#nav li {
+        display:block;
+    }
+    ul#nav li a {
+        display: block;
+        width: 200px;
+        margin:0 auto;
+        border: 1px solid #446f83;
+        color: #fff;
+        font-size:18px;
+        background-color: #186387;
+        border-radius: 4px;
+    }
+    ul#nav li a:hover {
+        border-color:#186387;
+        background-color:#446f83;
+    }
+    #columns img {
+        display:none;
+    }
+    #columns section {
+        width:100%;
+        padding:10px;
+        margin:0;
+    }
+}
+.no-cssgradients #header-wrapper
+{
+    background: url(images/mainGradient.png) 0 0 repeat-x;
+}
+.no-borderradius
+{
+    behavior: url(PIE_uncompressed.htc);
+}
+

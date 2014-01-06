@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 5 - Task 4</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 5 - Task 4</h1>
+        <h3>Counts number of div tags in the current page</h3>
+        <div id="indata"> 
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var result = "The number of divs in the web page is " + count("div");
+
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+
+        function count(tagName) {
+            var count = 0;
+
+            var tags = document.getElementsByTagName(tagName); // gets a collection of all tags in the web page that are tagName
+            if (tags != null) count = tags.length;
+            return count; // the length of the tags array is number of matches
+        }
+    </script>
+</body>
+</html>
+
+ 

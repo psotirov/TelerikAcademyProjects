@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 7 - Task 8</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 7 - Task 8</h1>
+        <h3>Replaces anchor tag with URL tag in a given HTML string</h3>
+        <h4>&lt;a href=".."&gt;...&lt;/a&gt; -> [URL=..]...[/URL]</h4>
+        <h4>The text is:</h4>
+        <p id="text"></p>
+        <div id="indata"> 
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        var text = '<p>Please visit <a href="http://academy.telerik.com">our site</a> to choose a training course. Also visit <a href="http://www.devbg.org">our forum</a> to discuss the courses</p>';
+        document.getElementById("text").innerText = text; // puts the text from the global variable in place immediately on document load
+
+        function result() {
+            document.getElementById('result').innerHTML = "<br />" + replaceAnchor() + "<br /><br />"; // outputs the result
+        }
+
+        function replaceAnchor() {
+            var openIndex;
+            while ((openIndex = text.indexOf('<a href="')) >= 0) // looks for anchor tags in the global variable "text"
+            {
+                var closeIndex = text.indexOf('">', openIndex+9); // immediately after opening of anchor tag its closing sequence was expected
+                var finalIndex = text.indexOf('</a>', closeIndex + 2); // after that follows finishing anchor closing tag
+                // takes all other parts of the string and adds new tag format 
+                text = text.substring(0, openIndex) + '[URL="' + text.substring(openIndex + 9, closeIndex) + '"]' +
+                    text.substring(closeIndex+2, finalIndex) + '[/URL]' + text.substring(finalIndex + 4);
+            }
+            text = text.replace(/</g, '&lt;'); // performs all other tags escaping
+            text = text.replace(/>/g, '&gt;');
+
+            return text;
+        }
+    </script>
+</body>
+</html>
+
+ 
+ 

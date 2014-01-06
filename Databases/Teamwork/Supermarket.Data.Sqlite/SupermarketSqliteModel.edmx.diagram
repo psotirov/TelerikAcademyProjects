@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4e783e46483e47ddbb6fbdda91cde8d4" Name="Diagram1">
+        <EntityTypeShape EntityType="SupermarketSqliteModel.ProductReports" Width="1.5" PointX="6.0360712325368411" PointY="4.5448072126809542" />
+        <EntityTypeShape EntityType="SupermarketSqliteModel.Taxes" Width="1.5" PointX="0.91665115063854075" PointY="1.7279639401137661" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

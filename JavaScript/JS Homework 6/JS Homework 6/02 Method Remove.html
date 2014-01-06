@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 6 - Task 2</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata input#param1 { width:40%; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 6 - Task 2</h1>
+        <h3>Implements prototype method to remove elements from an array</h3>
+        <h4>Please enter an array and element to remove</h4>
+        <div id="indata"> 
+            <label for="param1">Array</label>
+            <input id="param1" type="text" value="1,2,1,4,1,3,4,1,111,3,2,1,'1'"/>
+            <label for="param2">Element to remove</label>
+            <input id="param2" type="text" value="1"/>
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var array = document.getElementById('param1').value.split(',');
+            var element = document.getElementById('param2').value;
+            var result = "Initial array: [ " + array.join(", ") + " ]<br />"
+            Array.prototype.Remove = removeElement; //adds function removeElement as prototype of Array object
+            array.Remove(element); // removes all array elements that equals to "element"
+            result += "Updated array: [ " + array.join(", ") + "]" // shows the updated array
+
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+
+        function removeElement(element) {
+            for (var i = 0; i < this.length; i++) { // iterates through each array element 
+                if (this[i] == element) { // removes it if equals to the "pattern" 
+                    this.splice(i, 1);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
+ 

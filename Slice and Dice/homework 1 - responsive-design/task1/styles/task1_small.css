@@ -1,0 +1,39 @@
+@media only screen and (max-width:480px) {
+	body #wrapper {
+		width: 100%;
+	}	
+	body #wrapper > header {
+		padding: 0;
+		border-bottom: none;
+	}	
+	body #wrapper > header nav {
+		float:none;
+		width:100%;		
+	}	
+	body #wrapper > header h1, body #wrapper > header nav li {
+		position:static;
+		display:inline-block;
+		width:97%;
+		text-align: center;
+		margin: 0 0 2px 1%;
+	}	
+	body #wrapper > section header .slider {
+		display:none;
+	}
+	body #wrapper > section article {
+		width: 97%;
+		padding: 1%;
+		border: none;
+		border-radius:0;
+		border-bottom: 1px solid black;
+	}
+	body #wrapper > section article .article-content img {
+		max-width: 80%;
+	}
+	
+	body #wrapper > footer {
+		position: static;
+		width: 98%;
+		border:0;
+	}
+}

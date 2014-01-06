@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 7 - Task 5</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 7 - Task 5</h1>
+        <h3>Replaces all non breaking white spaces with &amp;nbsp; symbol</h3>
+        <h4>We are assuming that a non breaking white space is a sequence of two or more spaces</h4>
+        <h4>The text is:</h4> 
+        <p id="text"></p>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        // global variable "text"
+        var text = "Contrary  to  popular  belief, Lorem  Ipsum  is not   simply  random  text. It  has   roots   in a      piece  of  classical Latin  literature    from     45    BC, making  it      over 2000  years  old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The  first    line  of Lorem  Ipsum, \"Lorem  ipsum  dolor   sit  amet..\", comes   from a   line   in  section      1.10.32.";
+        // writes the content of the variable into the "text" element during document load.
+        document.getElementById("text").innerText = text;
+
+        function result() {
+            document.getElementById('result').innerHTML = "<br />" + addNBSP() + "<br /><br />"; // outputs the result
+        }
+
+        function addNBSP() {
+            var result = ""; // initially the result is empty
+            var nbsp = ""; // initially the current tag is empty
+            for (var i = 0; i < text.length; i++) { // iterates into the global variable "text"
+                if (text[i] == ' ') { // puts the sequence of spaces into another variable, instead of a result
+                    if (nbsp.length > 0) { // if we have a space or sequence of NBSP
+                        if (nbsp.length == 1) nbsp = "&amp;nbsp;"; // converts first space into NBSP
+                        nbsp += "&amp;nbsp;"; // converts current space into NBSP 
+                    }
+                    else nbsp += text[i]; // leave first space as it is. only two or more spaces are converted
+                }
+                else { // adds all other characters directly to the result
+                    if (nbsp.length > 0) { // if we have a space or sequence of NBSP
+                        result += nbsp; // puts it (them) to the result
+                        nbsp = ""; // empties the variable
+                    }
+                    result += text[i]; //puts the character into the result
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
+
+ 
+ 

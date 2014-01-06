@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript3 Homework 1 - Tasks 1 and 2</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript3 Homework 1 - Tasks 1 and 2</h1>
+        <h3>Creates schools repository using Classical and Prototypal OOP</h3>
+        <div id="result"></div>
+    </div>
+    <script src="ClassicalOOP.js"></script>
+    <script src="PrototypalOOP.js"></script>
+    <script type="text/javascript">
+        // Prototypal OOP
+        var teacher1 = Object.create(PrototypalOOP.Teacher);
+        teacher1.init("Nadezhda", "Petrova", 25, "Mathematics");
+        var teacher2 = Object.create(PrototypalOOP.Teacher);
+        teacher2.init("Gospodin", "Gospodinov", 45, "Sports");
+
+        var class1 = Object.create(PrototypalOOP.StudentsClass);
+        class1.init("Mathematics", teacher1);
+        var class2 = Object.create(PrototypalOOP.StudentsClass);
+        class2.init("Sports", teacher2);
+
+        var students = [];
+        for (var i = 0; i < 21; i++) {
+            students[i] = Object.create(PrototypalOOP.Student);
+            students[i].init("Pesho" + (i + 1), "Petrov", 17 + i % 2, 10 + i % 2);
+            if (i%3) {
+                class1.addStudent(students[i]);
+            } else {
+                class2.addStudent(students[i]);
+            }
+        }
+
+        var school1 = Object.create(PrototypalOOP.School);
+        school1.init("Prototypal High School", "Sofia");
+        school1.addClass(class1);
+        school1.addClass(class2);
+
+        // Classical OOP
+        var teacher01 = new ClassicalOOP.Teacher();
+        teacher01.init("Nadezhda", "Petrova", 25, "Mathematics");
+        var teacher02 = new ClassicalOOP.Teacher();
+        teacher02.init("Gospodin", "Gospodinov", 45, "Sports");
+
+        var class01 = new ClassicalOOP.StudentsClass();
+        class01.init("Mathematics", teacher01);
+        var class02 = new ClassicalOOP.StudentsClass();
+        class02.init("Sports", teacher02);
+
+        var studentsC = [];
+        for (var i = 0; i < 21; i++) {
+            studentsC[i] = new ClassicalOOP.Student();
+            studentsC[i].init("Pesho" + (i + 1), "Petrov", 17 + i % 2, 10 + i % 2);
+            if (i % 3) {
+                class01.addStudent(studentsC[i]);
+            } else {
+                class02.addStudent(studentsC[i]);
+            }
+        }
+
+        var school01 = new ClassicalOOP.School();
+        school01.init("Classical High School", "Sofia");
+        school01.addClass(class1);
+        school01.addClass(class2);
+
+        var container = document.getElementById('result'); // task visual container
+        if (container) {
+            print("<h4>PROTOTYPAL OOP IMPLEMENTATION</h4>");
+            print(school1.toString());
+            print("<br/><h4>CLASSICAL OOP IMPLEMENTATION</h4>");
+            print(school01.toString());
+        }
+
+        // Helper function - Prints text in the result container
+        function print(text) {
+            var output = document.createElement('p');
+            if (container && output) {
+                text = text || "&nbsp;";
+                text = text.replace(/},/g, "},<br />");
+                output.innerHTML = text;
+                container.appendChild(output);
+            }
+        }
+    </script>
+</body>
+</html>
+
+ 

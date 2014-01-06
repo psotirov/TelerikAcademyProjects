@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Homework 1 - Task 5</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata textarea#tags { width:40%; height:100px;}
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript2 Homework 1 - Task 5</h1>
+        <h3>Creates Tags Cloud where each tag is shown with different font size, depending on number of its repetitions</h3>
+        <h4>Please enter input data (red background means wrong input)</h4>
+        <div id="indata"> 
+            <label for="tags">Tags</label>
+            <textarea id="tags">cms, javascript, js, ASP.NET MVC, .net, .net, css, wordpress, xaml, js, http, web, asp.net, asp.net MVC, ASP.NET MVC, wp, javascript, js, cms, html, javascript, http, http, CMS</textarea>
+            <label for="minFont">Minimal font height</label>
+            <input id="minFont" type="text" value="17"/><br /><br /><br />
+            <label for="maxFont">Maximal font height</label>
+            <input id="maxFont" type="text" value="42"/>
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var output = document.getElementById('result'); // tags cloud output container div
+
+            // checks minFont for correctness
+            var minFontInput = document.getElementById('minFont');
+            var minFont = parseInt(minFontInput.value);
+            if (minFontInput.value != minFont || minFont <= 10) {
+                minFontInput.style.backgroundColor = 'red';
+                return;
+            }
+            minFontInput.style.backgroundColor = 'white'; // correct value
+
+            // creates array that holds and counts all different tags
+            var tagsCloud = []; 
+            var inputTags = document.getElementById('tags').value.split(',');
+            for (var i = 0; i < inputTags.length; i++) {
+                var tag = inputTags[i].trim().toLowerCase(); // discard any spaces around the tag and makes it case insensitive
+                if (tag.length) {
+                    if (tagsCloud[tag]) {
+                        tagsCloud[tag] = tagsCloud[tag] + 1; // we found repetitive tag
+                    } else {
+                        tagsCloud[tag] = 1; // this is the first tag met to the moment
+                    }
+                }
+            }
+
+            if (!tagsCloud.length) { // there is no tags, error
+                document.getElementById('tags').style.backgroundColor = 'red';
+            }
+            document.getElementById('tags').style.backgroundColor = 'white'; // correct value 
+
+            // finds minimal and maximal number of repetitive tags
+            var minCount = -1;
+            var maxCount = 0;
+            for (var tag in tagsCloud) {
+                if (minCount < 0 || tagsCloud[tag] < minCount) minCount = tagsCloud[tag];
+                if (tagsCloud[tag] > maxCount) maxCount = tagsCloud[tag];
+            }
+            // some console.log statements leaved in the code in order to help checkers
+            console.log('minCount: ' + minCount);
+            console.log('maxCount: ' + maxCount);
+
+            // checks minFont for correctness
+            var maxFontInput = document.getElementById('maxFont');
+            var maxFont = parseInt(maxFontInput.value);
+            if (maxFontInput.value != maxFont || maxFont <= 0 || (maxFont - minFont - maxCount + minCount) < 0) {
+                // there is an error or there is not enough range of font heights
+                maxFontInput.style.backgroundColor = 'red';
+                return;
+            }
+            maxFontInput.style.backgroundColor = 'white'; // correct value
+
+            // calculates font size scale factor to increase tags height uniformly in the range
+            var factor = (maxFont - minFont) / (maxCount - minCount);
+            console.log('factor: ' + factor);
+
+            // creates Tags Cloud
+            output.innerHTML = ''; // clears all old content
+            for (var tag in tagsCloud) {
+                var holder = document.createElement('span');
+                console.log('tagsCloud: ' + tag + '='+tagsCloud[tag]);
+                holder.innerText = ' ' + tag + ' ';
+                var fontHeight = parseInt(minFont + factor * (tagsCloud[tag] - minCount)) + 'px';
+                console.log(fontHeight);
+                holder.style.fontSize = fontHeight;
+                output.appendChild(holder);
+            }
+        }
+    </script>
+</body>
+</html>
+
+ 

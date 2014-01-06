@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 6 - Task 1</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata input#param1 { width:40%; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 6 - Task 1</h1>
+        <h3>Working with Point and Line objects</h3>
+        <h4>Please enter some lines (2-points coordinates each) in the following format</h4>
+        <h4>x11,y11-x12,y12;x21,y21-x22,y22;x31,y31-x32,y32</h4>
+        <div id="indata"> 
+            <label for="param1">Lines coordinates</label>
+            <input id="param1" type="text" value="1,2-4,2;2,6-8,6;11,17-25,35"/>
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var linesCoordinates = document.getElementById('param1').value.split(';');
+            var lines = []; // creates an empty array of line objects 
+            for (var i in linesCoordinates) {
+                lines[i] = parseLine(linesCoordinates[i]); // parses each line object
+            }
+            var result = "Lines are:<br />"
+            lines.sort(function (x, y) { return parseInt(x.length() - y.length()); }) // sorts all lines in ascending order of their line lengths
+            for (var i in lines) { // prints each line 
+                result += lines[i].toString() + "<br />";
+            }
+
+            // the condition for three lines to make triangle is the longest line length to be less than the sum of the other two
+            if (lines.length > 2 && lines[2].length() < lines[0].length() + lines[1].length()) {
+                result += "These lines can make a triangle";
+            } else {
+                result += "These lines CAN NOT make a triangle";
+            }
+
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+
+        function parseLine(lineString) {
+            var points = lineString.split('-');
+            if (points == null || points.length != 2) points = ["0,0","0,0"]; // sets zero length line if parameters are wrong
+            return {
+                point1: parsePoint(points[0]) || { X: 0, Y: 0 }, // point1 object as line field
+                point2: parsePoint(points[1]) || { X: 0, Y: 0 }, // point2 object as line field
+                length: function () { // line length calculation method
+                    var deltaX = this.point1.X - this.point2.X;
+                    var deltaY = this.point1.Y - this.point2.Y;
+                    return Math.sqrt(deltaX*deltaX+deltaY*deltaY);
+                },
+                toString: function () { // toString method
+                    return "Line { " + this.point1.toString() + ", " + this.point2.toString() + ", length=" + this.length() + " }";
+                }
+            };
+        }
+
+        function parsePoint(pointString) {
+            var point = pointString.split(',');
+            if (point == null || point.length != 2) point = ["0", "0"]; // sets zero point if parameters are wrong
+            return {
+                X: parseFloat(point[0]) || 0.0, // X field
+                Y: parseFloat(point[1]) || 0.0, // Y field
+                toString: function () { // toString method
+                    return "Point[" + this.X.toString() + "," + this.Y.toString() + "]";
+                }
+            };
+        }
+    </script>
+</body>
+</html>
+
+ 

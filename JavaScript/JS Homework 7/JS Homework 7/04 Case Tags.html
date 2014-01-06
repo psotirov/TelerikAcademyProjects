@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 7 - Task 4</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 7 - Task 4</h1>
+        <h3>Changes the case of a given text according to the meaning of each tag pair - &lt;upcase&gt;, &lt;lowcase&gt;, &lt;mixpcase&gt;</h3>
+        <h4>The text is:</h4>
+        <p id="text">Contrary to popular belief, &lt;upcase&gt;Lorem Ipsum&lt;/upcase&gt; is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. &lt;upcase&gt;Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia&lt;/upcase&gt;, looked up one of the more obscure Latin words, consectetur, from a &lt;upcase&gt;Lorem Ipsum&lt;/upcase&gt; passage, and going through the cites of the word in classical literature, discovered the undoubtable source. &lt;upcase&gt;Lorem Ipsum&lt;/upcase&gt; comes from sections 1.10.32 and 1.10.33 of &lt;upcase&gt;"de Finibus Bonorum et Malorum"&lt;/upcase&gt; (&lt;lowcase&gt;&lt;upcase&gt;The Extremes of Good and Evil&lt;/upcase&gt;&lt;/lowcase&gt;) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of &lt;upcase&gt;Lorem Ipsum&lt;/upcase&gt;, "&lt;mixcase&gt;&lt;upcase&gt;Lorem ipsum&lt;/upcase&gt; dolor sit amet..&lt;/mixcase&gt;", comes from a line in section 1.10.32.</p>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            document.getElementById('result').innerHTML = "<br />" + caseTags() + "<br /><br />"; // outputs the result
+        }
+
+        function caseTags() {
+            var text = document.getElementById("text").innerText; // gets the text to look inside
+            var result = ""; // initially the result is empty
+            var tag = ""; // initially the current tag is empty
+            var tagQueue = ""; // initially the current tags queue is empty, during the conversion it will holds the tags opened:
+            // 'l' for lowercase, 'u' for uppercase, 'm' for randomly generated upper or lower case of the current character
+            // "lu" means that the charcter will be transformed first to upper case and after to lowercase.
+            // when a closing tag appears, the last opertion into the queue will be removed, i.e. "lu" -> "l"
+            for (var i = 0; i < text.length; i++) {
+                if (text[i] == '<' || tag.length > 0) { // puts the next sequence of characters in the tag rather than in result (we have a tag)
+                    tag += text[i];
+                    if (text[i] == '>') { // closing tag character, process the tag
+                        if (tag[1] == '/') { // the second character is '/' - we have closing tag
+                            if (tagQueue.length > 0) tagQueue = tagQueue.substr(0, tagQueue.length - 1); // removes last tag symbol from the queue
+                        }
+                        else { // otherwise we have opening tag, put it to the queue
+                            tagQueue += tag[1]; // adds first tag character into the queue
+                        }
+                        tag = ""; // empties the tag holder since it was proceeded
+                    }
+                }
+                else { // the character is outside the tag name, proceeds and adds it to the result
+                    var character = text[i]; // takes current character
+                    for (var j = tagQueue.length-1; j >=0; j--) { // iterates into the tags queue from last to first one
+                        switch (tagQueue[j]) {
+                            case 'u':
+                                character = character.toUpperCase();
+                                break;
+                            case 'l':
+                                character = character.toLowerCase();
+                                break;
+                            case 'm':
+                                if (Math.random() > 0.5) character = character.toUpperCase();
+                                else character = character.toLowerCase();
+                                break;
+                        }
+                    }
+                    result += character; //puts the character into the result
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
+
+ 
+ 

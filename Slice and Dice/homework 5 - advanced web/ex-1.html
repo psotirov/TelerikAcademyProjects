@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="bg" xml:lang="bg" dir="ltr">
+<head>
+	<title>Упражнение 1 - оптимизация на HTML и CSS</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<style type="text/css">
+	body {font:14px sans-serif}
+	a {text-decoration:none}
+	.tabs {
+		list-style:none;
+		margin:0;
+		padding:0 10px;
+		border-bottom:1px solid #ccc;
+		position:relative;
+		_zoom:1;
+	}
+	.tabs:after {
+		content:"";
+		clear:both;
+		display:block;
+	}
+	.tabs li {
+		float:left;
+		display:inline;
+	}
+	.tabs li a {
+		margin-right:10px;
+		border:1px solid #ccc;
+		display:block;
+		position:relative;
+		bottom:-1px;
+		color:#888;
+		background-color:#f0f0f0;
+		padding:2px 10px;
+	}
+	.tabs li a:hover {
+		background-color:#fafafa;
+	}
+	.tabs li a#curr {
+		border-bottom-color:#fff;
+		color:#000;
+		background-color:#fff;
+	}
+	</style>
+</head>
+<body>
+<ul class="tabs">
+	<li><a href="#" id="curr">Link 1</a></li>
+	<li><a href="#">Link 2</a></li>
+	<li><a href="#">Link 3</a></li>
+	<li><a href="#">Link 4</a></li>
+	<li><a href="#">Link 5</a></li>
+</ul>
+</body>
+</html>

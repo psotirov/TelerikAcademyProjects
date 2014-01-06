@@ -1,0 +1,688 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<dir name="Install">
+  <file name="bios-20130425145225.zip" size="8143346" />
+  <file name="chromeinstall-7u25.exe" size="903080" />
+  <file name="dotCoverSetup.2.2.515.8.msi" size="31633408" />
+  <file name="DraftSight.exe" size="93816224" />
+  <file name="DTLite4454-0316.exe" size="14294360" />
+  <file name="eclipse-jee-juno-win32-x86_64.zip" size="231988138" />
+  <file name="fiddler2setup.exe" size="748496" />
+  <file name="jre-7u25-windows-x64.exe" size="33150376" />
+  <file name="JustCode_2013.2.611.6_Dev.msi" size="43008000" />
+  <file name="npp.6.2.Installer.exe" size="5860557" />
+  <file name="php-5.3.14-nts-Win32-VC9-x86.msi" size="39960576" />
+  <file name="putty.exe" size="483328" />
+  <file name="SHFBGuidedInstaller_1970.zip" size="29830842" />
+  <file name="SQLEXPRWT_x64_ENU.exe" size="357075912" />
+  <file name="SQLiteExpertPersSetup.exe" size="26353616" />
+  <file name="themeforest-85449-different-corporate-portfolio.zip" size="5955620" />
+  <file name="Thunderbird Setup 14.0.exe" size="18650072" />
+  <file name="TortoiseSVN-1.7.13.24257-x64-svn-1.7.10.msi" size="17719296" />
+  <file name="vlc-2.0.7-win32.exe" size="22937227" />
+  <file name="VS2010Express1.iso" size="727351296" />
+  <dir name="CDv8.0">
+    <file name="Autorun.inf" size="33" />
+    <file name="START.exe" size="3231175" />
+    <dir name="ACR38T_Reader">
+      <file name="ReadMe.txt" size="4727" />
+      <file name="Setup.exe" size="236056" />
+      <file name="Setup.ini" size="20" />
+      <dir name="Drivers">
+        <dir name="USB">
+          <file name="a38ccid.cat" size="8027" />
+          <file name="a38ccid.inf" size="3358" />
+          <file name="a38ccid.sys" size="37888" />
+          <file name="a38ccidx64.sys" size="45568" />
+          <dir name="98ME">
+            <file name="a38ccid.inf" size="3379" />
+            <file name="a38cd98.sys" size="37888" />
+          </dir>
+        </dir>
+      </dir>
+      <dir name="redist">
+        <file name="InstMsiW.exe" size="1822848" />
+      </dir>
+      <dir name="Utility">
+        <file name="SCBASE" size="757416" />
+        <file name="Setup64.exe" size="66560" />
+        <file name="SMCLIB" size="140568" />
+        <dir name="x64">
+          <file name="difxapi.dll" size="414632" />
+        </dir>
+        <dir name="x86">
+          <file name="ACR38T.exe" size="151600" />
+          <file name="difxapi.dll" size="337320" />
+        </dir>
+      </dir>
+      <dir name="x64">
+        <file name="ACR38U_PCSC_Driver-1.1.6.1.msi" size="1815552" />
+        <file name="Arabic.mst" size="43008" />
+        <file name="Chinese (Simplified).mst" size="36352" />
+        <file name="Chinese (Traditional).mst" size="36864" />
+        <file name="Czech.mst" size="46592" />
+        <file name="Danish.mst" size="47104" />
+        <file name="Dutch.mst" size="49664" />
+        <file name="Finnish.mst" size="45568" />
+        <file name="French.mst" size="51712" />
+        <file name="German.mst" size="51712" />
+        <file name="Greek.mst" size="53248" />
+        <file name="Hebrew.mst" size="39936" />
+        <file name="Hungarian.mst" size="48128" />
+        <file name="Italian.mst" size="50688" />
+        <file name="Japanese.mst" size="48128" />
+        <file name="Korean.mst" size="43520" />
+        <file name="Norwegian.mst" size="45568" />
+        <file name="Polish.mst" size="47616" />
+        <file name="Portuguese (Brazil).mst" size="47616" />
+        <file name="Portuguese (Portugal).mst" size="48640" />
+        <file name="Russian.mst" size="47104" />
+        <file name="Spanish.mst" size="49664" />
+        <file name="Swedish.mst" size="46080" />
+        <file name="Turkish.mst" size="46080" />
+        <file name="Ukrainian.mst" size="48128" />
+      </dir>
+      <dir name="x86">
+        <file name="ACR38U_PCSC_Driver-1.1.6.1.msi" size="1426944" />
+        <file name="Arabic.mst" size="43008" />
+        <file name="Chinese (Simplified).mst" size="36352" />
+        <file name="Chinese (Traditional).mst" size="36864" />
+        <file name="Czech.mst" size="46592" />
+        <file name="Danish.mst" size="47104" />
+        <file name="Dutch.mst" size="49664" />
+        <file name="Finnish.mst" size="45568" />
+        <file name="French.mst" size="51712" />
+        <file name="German.mst" size="51712" />
+        <file name="Greek.mst" size="53248" />
+        <file name="Hebrew.mst" size="39936" />
+        <file name="Hungarian.mst" size="48128" />
+        <file name="Italian.mst" size="50688" />
+        <file name="Japanese.mst" size="48128" />
+        <file name="Korean.mst" size="43520" />
+        <file name="Norwegian.mst" size="45568" />
+        <file name="Polish.mst" size="47616" />
+        <file name="Portuguese (Brazil).mst" size="47616" />
+        <file name="Portuguese (Portugal).mst" size="48640" />
+        <file name="Russian.mst" size="47104" />
+        <file name="Spanish.mst" size="49664" />
+        <file name="Swedish.mst" size="46080" />
+        <file name="Turkish.mst" size="46080" />
+        <file name="Ukrainian.mst" size="48128" />
+      </dir>
+    </dir>
+    <dir name="B-Trust_Instrutions">
+      <file name="ACR38 _bg.html" size="4489" />
+      <file name="ACR38 _en.html" size="4283" />
+      <file name="Firefox_bg.html" size="5177" />
+      <file name="Firefox_en.html" size="5189" />
+      <file name="SmartCard_bg.html" size="5755" />
+      <file name="SmartCard_en.html" size="5281" />
+      <file name="Thunderbird_bg.html" size="8196" />
+      <file name="Thunderbird_en.html" size="7658" />
+      <file name="Usage_bg.html" size="7513" />
+      <file name="Usage_en.html" size="1564" />
+      <dir name="css">
+        <file name="main.css" size="1114" />
+      </dir>
+      <dir name="img">
+        <file name="ACR38_1.jpg" size="27903" />
+        <file name="ACR38_2.jpg" size="135026" />
+        <file name="ACR38_3.jpg" size="39482" />
+        <file name="ACR38_4.jpg" size="41831" />
+        <file name="ACR38_5.jpg" size="40058" />
+        <file name="ACR38_6.jpg" size="17042" />
+        <file name="ACR38_7.jpg" size="29923" />
+        <file name="ACR38_8.jpg" size="24392" />
+        <file name="ACR38_9.jpg" size="63511" />
+        <file name="ChangePIN1.jpg" size="21754" />
+        <file name="ChangePIN2.jpg" size="48937" />
+        <file name="ChangePIN3.jpg" size="11059" />
+        <file name="ChangePIN4.jpg" size="49004" />
+        <file name="ChangePIN5.jpg" size="15625" />
+        <file name="Firefox.jpg" size="29860" />
+        <file name="Firefox1.jpg" size="45254" />
+        <file name="Firefox2.jpg" size="35105" />
+        <file name="Firefox3.jpg" size="42524" />
+        <file name="Firefox4.jpg" size="42512" />
+        <file name="Firefox5.jpg" size="14364" />
+        <file name="Firefox6.jpg" size="72250" />
+        <file name="Firefox7.jpg" size="47411" />
+        <file name="Firefox8.jpg" size="32139" />
+        <file name="Firefox9.jpg" size="38215" />
+        <file name="Firefox_EN1.jpg" size="36569" />
+        <file name="Firefox_EN2.jpg" size="71237" />
+        <file name="Firefox_EN3.jpg" size="60457" />
+        <file name="Firefox_EN4.jpg" size="27937" />
+        <file name="Firefox_EN5.jpg" size="86114" />
+        <file name="Firefox_EN6.jpg" size="68546" />
+        <file name="Firefox_EN7.jpg" size="89372" />
+        <file name="Firefox_EN8.jpg" size="160905" />
+        <file name="Firefox_EN9.jpg" size="82658" />
+        <file name="logo.gif" size="5318" />
+        <file name="SmartCard1.jpg" size="3307" />
+        <file name="SmartCard2.jpg" size="14354" />
+        <file name="SmartCard3.jpg" size="3163" />
+        <file name="SmartCard4.jpg" size="14692" />
+        <file name="SmartCard_2en.JPG" size="22000" />
+        <file name="SmartCard_en.JPG" size="9698" />
+        <file name="SmartCard_en1.JPG" size="11143" />
+        <file name="SmartCard_en3.JPG" size="3935" />
+        <file name="SmartCard_en4.JPG" size="21641" />
+        <file name="Thinderbird_EN1.jpg" size="52942" />
+        <file name="Thinderbird_EN2.jpg" size="60440" />
+        <file name="Thinderbird_EN4.jpg" size="76882" />
+        <file name="Thinderbird_EN5.jpg" size="59115" />
+        <file name="Thinderbird_EN6.jpg" size="72423" />
+        <file name="Thinderbird_EN7.jpg" size="98493" />
+        <file name="Thinderbird_EN8.jpg" size="135029" />
+        <file name="Thumbs.db" size="2136064" />
+        <file name="Thunderbird1.jpg" size="57891" />
+        <file name="Thunderbird10.jpg" size="33210" />
+        <file name="Thunderbird11.jpg" size="36257" />
+        <file name="Thunderbird12.jpg" size="49354" />
+        <file name="Thunderbird13.jpg" size="13839" />
+        <file name="Thunderbird14.jpg" size="5388" />
+        <file name="Thunderbird15.jpg" size="32173" />
+        <file name="Thunderbird16.jpg" size="11732" />
+        <file name="Thunderbird17.jpg" size="52875" />
+        <file name="Thunderbird18.jpg" size="41287" />
+        <file name="Thunderbird19.jpg" size="26300" />
+        <file name="Thunderbird2.jpg" size="114568" />
+        <file name="Thunderbird20.jpg" size="75454" />
+        <file name="Thunderbird21.jpg" size="52504" />
+        <file name="Thunderbird22.jpg" size="34349" />
+        <file name="Thunderbird3.jpg" size="32159" />
+        <file name="Thunderbird4.jpg" size="41576" />
+        <file name="Thunderbird5.jpg" size="45467" />
+        <file name="Thunderbird6.jpg" size="33685" />
+        <file name="Thunderbird7.jpg" size="25163" />
+        <file name="Thunderbird8.jpg" size="30087" />
+        <file name="Thunderbird9.jpg" size="29936" />
+        <file name="Tinderbird10.jpg" size="110291" />
+        <file name="Tinderbird_EN11.jpg" size="83441" />
+        <file name="Tinderbird_EN3.jpg" size="52792" />
+        <file name="Tinderbird_EN9.jpg" size="83518" />
+      </dir>
+    </dir>
+    <dir name="B-Trust_Software">
+      <dir name="B-Trust_CA_Certificates">
+        <file name="BSOperCA.cer" size="1149" />
+        <file name="BSOperCA3.cer" size="1564" />
+        <file name="BSOperCA4.cer" size="1532" />
+        <file name="BSRootCA.cer" size="1087" />
+        <file name="BSRootCA3.cer" size="1384" />
+        <file name="BSRootCA4.cer" size="1381" />
+        <file name="BSTSA.cer" size="1704" />
+        <file name="bs_obj.cer" size="2182" />
+        <file name="ocsp.b-trust.org.cer" size="1701" />
+        <file name="OperCA5AES.cer" size="2740" />
+        <file name="OperCA5QES.cer" size="2967" />
+        <file name="RootCA5.cer" size="2520" />
+        <dir name="All_BTrust_CAs">
+          <file name="All_BTrust_CAs.p12" size="20344" />
+        </dir>
+      </dir>
+      <dir name="B-Trust_Signing">
+        <file name="capicom_dc_sdk.msi" size="1920512" />
+        <dir name="AdobeConfig">
+          <file name="BTrustAcrobatReaderFix.exe" size="164352" />
+        </dir>
+      </dir>
+      <dir name="B-Trust_Tools">
+        <dir name="MozillaAddon">
+          <file name="sc_cert_delete.xpi" size="45419" />
+        </dir>
+        <dir name="OfflineManager">
+          <file name="BTrustSCManager.exe" size="18263040" />
+        </dir>
+      </dir>
+    </dir>
+    <dir name="Linux">
+      <dir name="B-Trust_Software">
+        <dir name="B-Trust_CA_Certificates">
+          <file name="BSOperCA.der" size="1149" />
+          <file name="BSOperCA3cert_DER.cer" size="1564" />
+          <file name="BSOperCA4cert.cer" size="1532" />
+          <file name="BSRootCA.der" size="1087" />
+          <file name="BSRootCA3.cer" size="1384" />
+          <file name="BSRootCA4cert.cer" size="1381" />
+          <file name="BSTSA.cer" size="1492" />
+          <file name="ocsp.b-trust.org_DER.cer" size="1490" />
+          <file name="OperCA5AEScert_pem.cer" size="2740" />
+          <file name="OperCA5QEScert_pem.cer" size="2967" />
+          <file name="RootCA5cert_pem.cer" size="2520" />
+        </dir>
+        <dir name="B-Trust_Tools">
+          <dir name="MozillaAddon">
+            <file name="sc_cert_delete.xpi" size="45419" />
+          </dir>
+        </dir>
+      </dir>
+      <dir name="openSUSE">
+        <file name="btrust-1.0-1.i586.rpm" size="5941106" />
+        <file name="openSUSE_bg.html" size="4228" />
+        <file name="openSUSE_en.html" size="3866" />
+        <dir name="css">
+          <file name="main.css" size="1114" />
+        </dir>
+        <dir name="img">
+          <file name="logo.gif" size="5318" />
+        </dir>
+      </dir>
+      <dir name="Other">
+        <file name="libcvP11.so" size="4558667" />
+        <file name="scinterface-5.0.0-SLES-11-i686.rpm" size="9243399" />
+      </dir>
+      <dir name="Ubuntu">
+        <file name="btrust-1.0-ubuntu-11-i686.deb" size="10702714" />
+        <file name="sunjava-1.6.30-ubuntu-11-i586.deb" size="21325062" />
+        <file name="Ubuntu_bg.html" size="3028" />
+        <file name="Ubuntu_en.html" size="2853" />
+        <dir name="css">
+          <file name="main.css" size="1114" />
+        </dir>
+        <dir name="img">
+          <file name="logo.gif" size="5318" />
+        </dir>
+      </dir>
+    </dir>
+    <dir name="MacOSX">
+      <file name="Install_B-Trust.pkg" size="10637966" />
+      <file name="Install_bg.html" size="2345" />
+      <file name="Install_en.html" size="2158" />
+      <dir name="B-Trust_Tools">
+        <dir name="MozillaAddon">
+          <file name="sc_cert_delete.xpi" size="45419" />
+        </dir>
+      </dir>
+      <dir name="css">
+        <file name="main.css" size="966" />
+      </dir>
+      <dir name="img">
+        <file name="logo.gif" size="5318" />
+        <file name="Thumbs.db" size="172032" />
+      </dir>
+    </dir>
+    <dir name="Other_CA_Certificates">
+      <file name="cqs-ca.cer" size="1490" />
+      <file name="in-csp-root.cer" size="1992" />
+      <file name="MobiSafe_CA.cer" size="2076" />
+      <file name="pqs-ca.cer" size="1495" />
+      <file name="qs-ca.cer" size="1737" />
+      <file name="SEP_Root_CA.cer" size="2331" />
+      <file name="Spektar NonUniversal CA.cer" size="1633" />
+      <file name="Spektar Qualified CA.cer" size="1802" />
+      <file name="Spektar Root CA.cer" size="1787" />
+      <file name="Spektar Universal CA.cer" size="1709" />
+      <file name="StampIT_Domestic_CA_NGL.cer" size="1632" />
+      <file name="StampIT_Domestic_Root_CA.cer" size="1521" />
+      <file name="StampIT_Primary_Root_CA.cer" size="2260" />
+      <file name="StampIT_Qualified_CA.cer" size="2078" />
+    </dir>
+    <dir name="Readers">
+      <dir name="ACR38">
+        <file name="ACR38DT.jpg" size="5108" />
+        <file name="ACR38T.jpg" size="75415" />
+        <file name="ACR38U-blue.jpg" size="9313" />
+        <file name="ACR38U.jpg" size="4947" />
+        <dir name="Windows">
+          <dir name="x64">
+            <file name="ReadMe.txt" size="5245" />
+            <file name="Setup.exe" size="236056" />
+            <file name="Setup.ini" size="20" />
+            <dir name="x64">
+              <file name="ACR38_100_122_PCSC_Driver.msi" size="1957376" />
+              <file name="Arabic.mst" size="43008" />
+              <file name="Chinese (Simplified).mst" size="36352" />
+              <file name="Chinese (Traditional).mst" size="36864" />
+              <file name="Czech.mst" size="46592" />
+              <file name="Danish.mst" size="47104" />
+              <file name="Dutch.mst" size="49664" />
+              <file name="Finnish.mst" size="45568" />
+              <file name="French.mst" size="51712" />
+              <file name="German.mst" size="51712" />
+              <file name="Greek.mst" size="53248" />
+              <file name="Hebrew.mst" size="39936" />
+              <file name="Hungarian.mst" size="48128" />
+              <file name="Italian.mst" size="50688" />
+              <file name="Japanese.mst" size="48128" />
+              <file name="Korean.mst" size="43520" />
+              <file name="Norwegian.mst" size="45568" />
+              <file name="Polish.mst" size="47616" />
+              <file name="Portuguese (Brazil).mst" size="47616" />
+              <file name="Portuguese (Portugal).mst" size="48640" />
+              <file name="Russian.mst" size="47104" />
+              <file name="Spanish.mst" size="49664" />
+              <file name="Swedish.mst" size="46080" />
+              <file name="Turkish.mst" size="46080" />
+              <file name="Ukrainian.mst" size="48128" />
+            </dir>
+          </dir>
+          <dir name="x86">
+            <file name="ReadMe.txt" size="5300" />
+            <file name="Setup.exe" size="236056" />
+            <file name="Setup.ini" size="20" />
+            <dir name="redist">
+              <file name="InstMsiW.exe" size="1822848" />
+            </dir>
+            <dir name="x86">
+              <file name="ACR38_100_122_PCSC_Driver.msi" size="1568768" />
+              <file name="Arabic.mst" size="43008" />
+              <file name="Chinese (Simplified).mst" size="36352" />
+              <file name="Chinese (Traditional).mst" size="36864" />
+              <file name="Czech.mst" size="46592" />
+              <file name="Danish.mst" size="47104" />
+              <file name="Dutch.mst" size="49664" />
+              <file name="Finnish.mst" size="45568" />
+              <file name="French.mst" size="51712" />
+              <file name="German.mst" size="51712" />
+              <file name="Greek.mst" size="53248" />
+              <file name="Hebrew.mst" size="39936" />
+              <file name="Hungarian.mst" size="48128" />
+              <file name="Italian.mst" size="50688" />
+              <file name="Japanese.mst" size="48128" />
+              <file name="Korean.mst" size="43520" />
+              <file name="Norwegian.mst" size="45568" />
+              <file name="Polish.mst" size="47616" />
+              <file name="Portuguese (Brazil).mst" size="47616" />
+              <file name="Portuguese (Portugal).mst" size="48640" />
+              <file name="Russian.mst" size="47104" />
+              <file name="Spanish.mst" size="49664" />
+              <file name="Swedish.mst" size="46080" />
+              <file name="Turkish.mst" size="46080" />
+              <file name="Ukrainian.mst" size="48128" />
+            </dir>
+          </dir>
+        </dir>
+      </dir>
+      <dir name="Omnikey_3621_PinPad">
+        <file name="CardMan_SPE_API_V1_1_0_11.exe" size="2702760" />
+        <file name="Omnikey3621.jpg" size="9928" />
+        <dir name="Windows">
+          <dir name="x64">
+            <file name="OKDiagnosticTool_x64AMD_V2_4_0_5.exe" size="6537896" />
+            <file name="OMNIKEY3x21_x64AMD_for_R1_2_2_8.msi" size="3769344" />
+            <dir name="CardMan3x21_V1_1_1_0_W64_IA">
+              <file name="chksvi64.dll" size="141312" />
+              <file name="cxbu0i64.cat" size="8899" />
+              <file name="cxbu0i64.inf" size="9892" />
+              <file name="cxbu0i64.sys" size="242816" />
+              <file name="readme_cm3x21i64.txt" size="3677" />
+            </dir>
+          </dir>
+          <dir name="x86">
+            <file name="OKDiagnosticTool_x86_V2_4_0_5.exe" size="7422144" />
+            <file name="OMNIKEY3x21_x86_for_R1_2_2_8.msi" size="3368448" />
+          </dir>
+        </dir>
+      </dir>
+      <dir name="Omnikey_3x21_6121">
+        <file name="Omnikey3021.jpg" size="9456" />
+        <file name="Omnikey3121.jpg" size="8246" />
+        <file name="Omnikey6121.jpg" size="9074" />
+        <dir name="Windows">
+          <dir name="x64">
+            <file name="OKDiagnosticTool_x64AMD_V2_4_0_5.exe" size="6537896" />
+            <file name="OMNIKEY3x21_x64AMD_for_R1_2_2_8.msi" size="3769344" />
+            <dir name="CardMan3x21_V1_1_1_0_W64_IA">
+              <file name="chksvi64.dll" size="141312" />
+              <file name="cxbu0i64.cat" size="8899" />
+              <file name="cxbu0i64.inf" size="9892" />
+              <file name="cxbu0i64.sys" size="242816" />
+              <file name="readme_cm3x21i64.txt" size="3677" />
+            </dir>
+          </dir>
+          <dir name="x86">
+            <file name="OKDiagnosticTool_x86_V2_4_0_5.exe" size="7422144" />
+            <file name="OMNIKEY3x21_x86_for_R1_2_2_8.msi" size="3368448" />
+          </dir>
+        </dir>
+      </dir>
+    </dir>
+    <dir name="script">
+      <file name="setup.exe" size="19536497" />
+    </dir>
+    <dir name="Windows">
+      <dir name="HID Global - Input, Other hardware - OMNIKEY 6121">
+        <file name="AMD64-ar_bg_zh-tw_cs_da_de_el_en_es_fi_fr_he_hu_it_ko_nl_no_pl_pt-br_ro_ru_hr_sk_sv_th_tr_sl_et_lv_lt_zh-cn_pt_ja-nec-20448309_8b838471c293c31e08138439839c7e955cee3da5.cab" size="88858" />
+        <file name="cxbu0x64.cat" size="8754" />
+        <file name="cxbu0x64.inf" size="13773" />
+        <file name="cxbu0x64.sys" size="177920" />
+        <file name="HID_OK_Drivers_EULA.txt" size="9252" />
+        <file name="readme_cm3x21x64.txt" size="5613" />
+      </dir>
+      <dir name="HID Global - Smartcard Reader - OMNIKEY 6121">
+        <file name="AMD64-ar_bg_zh-tw_cs_da_de_el_en_es_fi_fr_he_hu_it_ko_nl_no_pl_pt-br_ro_ru_hr_sk_sv_th_tr_sl_et_lv_lt_zh-cn_pt_ja-nec-20508337_fa694d6c6ae63ef4d88a64999dd61b05955cfc7a.cab" size="89701" />
+        <file name="cxbu0x64.cat" size="11274" />
+        <file name="cxbu0x64.inf" size="18880" />
+        <file name="cxbu0x64.sys" size="142336" />
+      </dir>
+      <dir name="installation_user">
+        <file name="0x0402.ini" size="23492" />
+        <file name="0x0407.ini" size="24692" />
+        <file name="0x0409.ini" size="21494" />
+        <file name="0x040c.ini" size="24966" />
+        <file name="0x0410.ini" size="23776" />
+        <file name="0x0416.ini" size="22964" />
+        <file name="1026.mst" size="86016" />
+        <file name="1031.mst" size="128512" />
+        <file name="1033.mst" size="3584" />
+        <file name="1036.mst" size="92672" />
+        <file name="1040.mst" size="92672" />
+        <file name="1046.mst" size="86016" />
+        <file name="cv_act_scinterface.msi" size="23714816" />
+        <file name="setup.exe" size="2292960" />
+        <file name="Setup.ini" size="6030" />
+        <dir name="transforms">
+          <file name="transforms_launch_examples.txt" size="945" />
+          <file name="usr_CSP_default.mst" size="20480" />
+          <file name="usr_CSP_disable_register_tool.mst" size="3584" />
+          <file name="usr_CSP_enable_biometric.mst" size="20480" />
+          <file name="usr_CSP_enable_biometric_disable_register_tool.mst" size="3584" />
+          <file name="usr_CSP_enable_biometric_w_gina.mst" size="20480" />
+          <file name="usr_CSP_enable_biometric_w_gina_disable_register_tool.mst" size="3584" />
+          <file name="usr_MDdds_default.mst" size="20480" />
+          <file name="usr_MDdds_disable_register_tool.mst" size="3584" />
+          <file name="usr_MDdds_enable_biometric.mst" size="20480" />
+          <file name="usr_MDdds_enable_biometric_disable_register_tool.mst" size="3584" />
+          <file name="usr_MDstd_default.mst" size="20480" />
+          <file name="usr_MDstd_disable_register_tool.mst" size="3584" />
+          <file name="usr_MDstd_enable_biometric.mst" size="20480" />
+          <file name="usr_MDstd_enable_biometric_disable_register_tool.mst" size="3584" />
+        </dir>
+      </dir>
+      <dir name="installation_user_x64">
+        <file name="0x0402.ini" size="23492" />
+        <file name="0x0407.ini" size="24692" />
+        <file name="0x0409.ini" size="21494" />
+        <file name="0x040c.ini" size="24966" />
+        <file name="0x0410.ini" size="23776" />
+        <file name="0x0416.ini" size="22964" />
+        <file name="1026.mst" size="86016" />
+        <file name="1031.mst" size="128512" />
+        <file name="1033.mst" size="3584" />
+        <file name="1036.mst" size="92672" />
+        <file name="1040.mst" size="92672" />
+        <file name="1046.mst" size="86016" />
+        <file name="cv_act_scinterface.msi" size="29662208" />
+        <file name="setup.exe" size="1984872" />
+        <file name="Setup.ini" size="5804" />
+        <dir name="transforms">
+          <file name="transforms_launch_examples.txt" size="945" />
+          <file name="usr_x64_CSP_default.mst" size="20480" />
+          <file name="usr_x64_CSP_disable_register_tool.mst" size="3584" />
+          <file name="usr_x64_CSP_enable_biometric.mst" size="20480" />
+          <file name="usr_x64_CSP_enable_biometric_disable_register_tool.mst" size="3584" />
+          <file name="usr_x64_MDdds_default.mst" size="20480" />
+          <file name="usr_x64_MDdds_disable_register_tool.mst" size="3584" />
+          <file name="usr_x64_MDdds_enable_biometric.mst" size="20480" />
+          <file name="usr_x64_MDdds_enable_biometric_disable_register_tool.mst" size="3584" />
+          <file name="usr_x64_MDstd_default.mst" size="20480" />
+          <file name="usr_x64_MDstd_disable_register_tool.mst" size="3584" />
+          <file name="usr_x64_MDstd_enable_biometric.mst" size="20480" />
+          <file name="usr_x64_MDstd_enable_biometric_disable_register_tool.mst" size="3584" />
+        </dir>
+      </dir>
+      <dir name="minidriver">
+        <file name="cvMD.CAT" size="1006" />
+        <file name="cvMD.inf" size="163223" />
+        <file name="cvMD32.dll" size="2137600" />
+        <file name="cvMD64.dll" size="2913792" />
+        <file name="cvMDac.CAT" size="1006" />
+        <file name="cvMDac.inf" size="10552" />
+        <file name="cvMDcs.CAT" size="1006" />
+        <file name="cvMDcs.inf" size="17668" />
+        <file name="cvMDgto.CAT" size="1006" />
+        <file name="cvMDgto.inf" size="7561" />
+        <file name="cvMDjc.CAT" size="1006" />
+        <file name="cvMDjc.inf" size="119538" />
+        <file name="cvMDjcp.CAT" size="1006" />
+        <file name="cvMDjcp.inf" size="78001" />
+        <file name="cvMDjto.CAT" size="1006" />
+        <file name="cvMDjto.inf" size="12391" />
+        <file name="cvMDsce.CAT" size="1006" />
+        <file name="cvMDsce.inf" size="36593" />
+        <file name="cvMDscs.CAT" size="1006" />
+        <file name="cvMDscs.inf" size="17826" />
+      </dir>
+      <dir name="V2_0_0_0_x64">
+        <file name="0x0409.ini" size="22492" />
+        <file name="data1.cab" size="3046831" />
+        <file name="data1.hdr" size="40677" />
+        <file name="data2.cab" size="2308810" />
+        <file name="ISSetup.dll" size="579584" />
+        <file name="layout.bin" size="550" />
+        <file name="setup.exe" size="809648" />
+        <file name="setup.ini" size="2470" />
+        <file name="setup.inx" size="250625" />
+      </dir>
+    </dir>
+    <dir name="_SmartCardSoftware">
+      <dir name="Windows">
+        <dir name="installation_user">
+          <file name="0x0402.ini" size="23492" />
+          <file name="0x0407.ini" size="24692" />
+          <file name="0x0409.ini" size="21494" />
+          <file name="0x040c.ini" size="24966" />
+          <file name="0x0410.ini" size="23776" />
+          <file name="0x0416.ini" size="22964" />
+          <file name="1026.mst" size="86016" />
+          <file name="1031.mst" size="128512" />
+          <file name="1033.mst" size="3584" />
+          <file name="1036.mst" size="92672" />
+          <file name="1040.mst" size="92672" />
+          <file name="1046.mst" size="86016" />
+          <file name="cv_act_scinterface.msi" size="23714816" />
+          <file name="setup.exe" size="2292960" />
+          <file name="Setup.ini" size="6030" />
+          <dir name="transforms">
+            <file name="transforms_launch_examples.txt" size="945" />
+            <file name="usr_CSP_default.mst" size="20480" />
+            <file name="usr_CSP_disable_register_tool.mst" size="3584" />
+            <file name="usr_CSP_enable_biometric.mst" size="20480" />
+            <file name="usr_CSP_enable_biometric_disable_register_tool.mst" size="3584" />
+            <file name="usr_CSP_enable_biometric_w_gina.mst" size="20480" />
+            <file name="usr_CSP_enable_biometric_w_gina_disable_register_tool.mst" size="3584" />
+            <file name="usr_MDdds_default.mst" size="20480" />
+            <file name="usr_MDdds_disable_register_tool.mst" size="3584" />
+            <file name="usr_MDdds_enable_biometric.mst" size="20480" />
+            <file name="usr_MDdds_enable_biometric_disable_register_tool.mst" size="3584" />
+            <file name="usr_MDstd_default.mst" size="20480" />
+            <file name="usr_MDstd_disable_register_tool.mst" size="3584" />
+            <file name="usr_MDstd_enable_biometric.mst" size="20480" />
+            <file name="usr_MDstd_enable_biometric_disable_register_tool.mst" size="3584" />
+          </dir>
+        </dir>
+        <dir name="installation_user_x64">
+          <file name="0x0402.ini" size="23492" />
+          <file name="0x0407.ini" size="24692" />
+          <file name="0x0409.ini" size="21494" />
+          <file name="0x040c.ini" size="24966" />
+          <file name="0x0410.ini" size="23776" />
+          <file name="0x0416.ini" size="22964" />
+          <file name="1026.mst" size="86016" />
+          <file name="1031.mst" size="128512" />
+          <file name="1033.mst" size="3584" />
+          <file name="1036.mst" size="92672" />
+          <file name="1040.mst" size="92672" />
+          <file name="1046.mst" size="86016" />
+          <file name="cv_act_scinterface.msi" size="29662208" />
+          <file name="setup.exe" size="1984872" />
+          <file name="Setup.ini" size="5804" />
+          <dir name="transforms">
+            <file name="transforms_launch_examples.txt" size="945" />
+            <file name="usr_x64_CSP_default.mst" size="20480" />
+            <file name="usr_x64_CSP_disable_register_tool.mst" size="3584" />
+            <file name="usr_x64_CSP_enable_biometric.mst" size="20480" />
+            <file name="usr_x64_CSP_enable_biometric_disable_register_tool.mst" size="3584" />
+            <file name="usr_x64_MDdds_default.mst" size="20480" />
+            <file name="usr_x64_MDdds_disable_register_tool.mst" size="3584" />
+            <file name="usr_x64_MDdds_enable_biometric.mst" size="20480" />
+            <file name="usr_x64_MDdds_enable_biometric_disable_register_tool.mst" size="3584" />
+            <file name="usr_x64_MDstd_default.mst" size="20480" />
+            <file name="usr_x64_MDstd_disable_register_tool.mst" size="3584" />
+            <file name="usr_x64_MDstd_enable_biometric.mst" size="20480" />
+            <file name="usr_x64_MDstd_enable_biometric_disable_register_tool.mst" size="3584" />
+          </dir>
+        </dir>
+        <dir name="minidriver">
+          <file name="cvMD.CAT" size="1006" />
+          <file name="cvMD.inf" size="163223" />
+          <file name="cvMD32.dll" size="2137600" />
+          <file name="cvMD64.dll" size="2913792" />
+          <file name="cvMDac.CAT" size="1006" />
+          <file name="cvMDac.inf" size="10552" />
+          <file name="cvMDcs.CAT" size="1006" />
+          <file name="cvMDcs.inf" size="17668" />
+          <file name="cvMDgto.CAT" size="1006" />
+          <file name="cvMDgto.inf" size="7561" />
+          <file name="cvMDjc.CAT" size="1006" />
+          <file name="cvMDjc.inf" size="119538" />
+          <file name="cvMDjcp.CAT" size="1006" />
+          <file name="cvMDjcp.inf" size="78001" />
+          <file name="cvMDjto.CAT" size="1006" />
+          <file name="cvMDjto.inf" size="12391" />
+          <file name="cvMDsce.CAT" size="1006" />
+          <file name="cvMDsce.inf" size="36593" />
+          <file name="cvMDscs.CAT" size="1006" />
+          <file name="cvMDscs.inf" size="17826" />
+        </dir>
+      </dir>
+    </dir>
+  </dir>
+  <dir name="Microinvest">
+    <file name="manual_delta_pro.pdf" size="5591720" />
+    <file name="manual_sklpro_light.pdf" size="6690503" />
+    <file name="manual_TRZ_Pro.pdf" size="5641983" />
+    <file name="manual_value.pdf" size="380818" />
+    <file name="m_static.exe" size="8735765" />
+    <file name="m_value.exe" size="8659111" />
+    <file name="Setup_DeltaPro_x64.exe" size="243953000" />
+    <file name="Setup_InvoicePro_x64.exe" size="320468328" />
+    <file name="Setup_TRZPro_x64.exe" size="328405352" />
+    <file name="Setup_WarehousePro.exe" size="285030760" />
+    <file name="SQLEXPR_x64_ENU.exe" size="128331696" />
+    <file name="ValidatorSetup.exe" size="53205623" />
+  </dir>
+  <dir name="mongodb-win32-x86_64-2008plus-2.4.5">
+    <file name="GNU-AGPL-3.0" size="35181" />
+    <file name="README" size="1359" />
+    <file name="THIRD-PARTY-NOTICES" size="18848" />
+    <dir name="bin">
+      <file name="bsondump.exe" size="14877184" />
+      <file name="mongo.exe" size="7970816" />
+      <file name="mongod.exe" size="14937088" />
+      <file name="mongod.pdb" size="95939584" />
+      <file name="mongodump.exe" size="14927360" />
+      <file name="mongoexport.exe" size="14882816" />
+      <file name="mongofiles.exe" size="14907392" />
+      <file name="mongoimport.exe" size="14907392" />
+      <file name="mongooplog.exe" size="14878208" />
+      <file name="mongoperf.exe" size="14881280" />
+      <file name="mongorestore.exe" size="14922240" />
+      <file name="mongos.exe" size="11422208" />
+      <file name="mongos.pdb" size="73575424" />
+      <file name="mongostat.exe" size="14929920" />
+      <file name="mongotop.exe" size="14882816" />
+    </dir>
+  </dir>
+</dir>

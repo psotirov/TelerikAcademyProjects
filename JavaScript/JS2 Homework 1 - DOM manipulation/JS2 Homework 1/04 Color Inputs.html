@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Homework 1 - Task 4</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata input#param1 { width:40%; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body onload="setup()">
+    <div id="wrapper">
+        <h1>JavaScript2 Homework 1 - Task 4</h1>
+        <h3>Creates two input color fields and textarea that receives values for background and font color</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="fontCol">Select font color for the text area</label>
+            <input id="fontCol" type="color" value="#ffffff"/>
+            <label for="bgrCol">Select background color for the text area</label>
+            <input id="bgrCol" type="color" value="#000000"/>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result">
+            <textarea id="output">This is the result text area</textarea>
+        </div>
+     </div>
+    <script type="text/javascript">
+        function setup() {
+            var fontColInput = document.getElementById('fontCol');
+            if (fontColInput) {
+                fontColInput.onchange = setFontColor;
+                setFontColor();
+
+            } 
+            var bgrColInput = document.getElementById('bgrCol');
+            if (bgrColInput) {
+                bgrColInput.onchange = setBackgroundColor;
+                setBackgroundColor();
+            }
+        }
+
+        function setFontColor() {
+            var textArea = document.getElementById('output');
+            if (textArea) {
+                textArea.style.color = document.getElementById('fontCol').value;
+            }
+        }
+
+        function setBackgroundColor() {
+            var textArea = document.getElementById('output');
+            if (textArea) {
+                textArea.style.backgroundColor = document.getElementById('bgrCol').value;
+            }
+        }
+    </script>
+</body>
+</html>
+
+ 

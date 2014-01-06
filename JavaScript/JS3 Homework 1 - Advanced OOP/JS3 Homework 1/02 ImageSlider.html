@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript3 Homework 1 - Task 3</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#result { position:relative; width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        .arrow { text-decoration:none; display:block; width:50px; height:20px; background-color:#6d6; color:#000; font-weight:bold; margin:10px; position:absolute; top:50%; }
+        #left { left:0; }
+        #right { right:0 }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript3 Homework 1 - Task 3</h1>
+        <h3>Image Slider, based on Prototypal OOP</h3>
+        <div id="result"></div>
+    </div>
+    <script src="ImageSlider.js"></script>
+    <script type="text/javascript">
+        var images = [];
+        for (var i = 0; i < 7; i++) {
+            images[i] = Object.create(Image);
+            images[i].init("Lion "+(i+1), "images/th_lion_"+(i+1)+".jpg", "images/lion_"+(i+1)+".jpg");
+        }
+
+        var imageSlider = Object.create(ImageSlider);
+        imageSlider.init(images);
+        imageSlider.render("result");
+    </script>
+</body>
+</html>
+
+ 

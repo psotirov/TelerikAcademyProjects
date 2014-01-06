@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="students.xslt"?>
+<students xmlns:s="urn:students">
+  <student>
+    <name>Tosho Toshev</name>
+    <sex>Male</sex>
+    <birthdate>10-Jan-1920</birthdate>
+    <phone>+359888777666</phone>
+    <email>tosho_mladia@abv.bg</email>
+    <course>Introductory</course>
+    <specialty>WEB Design</specialty>
+    <facultynumber>12345678</facultynumber>
+    <exams>
+      <exam>
+        <examname>Intorduction to C#</examname>
+        <tutor>Svetlin Nakov</tutor>
+        <finalscore>5.0 out of 6.0</finalscore>
+      </exam>
+      <exam>
+        <examname>Intorduction to JavaScript</examname>
+        <tutor>Svetlin Nakov</tutor>
+        <finalscore>5.0 out of 6.0</finalscore>
+      </exam>
+    </exams>
+  </student>
+  <student>
+    <name>Gosho Goshev</name>
+    <sex>Male</sex>
+    <birthdate>10-Jan-1999</birthdate>
+    <phone>+359888666777</phone>
+    <email>gosho_durtia@abv.bg</email>
+    <course>Intermediate</course>
+    <specialty>Databses</specialty>
+    <facultynumber>12312312</facultynumber>
+  </student>
+  <student>
+    <name>Peshonka Pesheva</name>
+    <sex>Female</sex>
+    <birthdate>10-Jan-1930</birthdate>
+    <phone>+359888666666</phone>
+    <email>baba_ti_pesheva@abv.bg</email>
+    <course>Expert in ASP.NET</course>
+    <specialty>Razor</specialty>
+    <facultynumber>87654321</facultynumber>
+  </student>
+</students>

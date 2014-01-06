@@ -1,0 +1,12 @@
+﻿Kiril    | Ivanov    | C#
+Stefka   | Nikolova  | SQL
+Stela    | Mineva    | Java
+Milena   | Petrova   | C#
+Ivan     | Grigorov  | C#
+Ivan     | Kolev     | SQL
+Ivan     | Ivanov    | C#
+Stela    | Nikolova  | SQL
+Stefka   | Mineva    | Java
+Milena   | Petrova   | C#
+Kiril    | Grigorov  | C#
+Kiril    | Kolev     | SQL

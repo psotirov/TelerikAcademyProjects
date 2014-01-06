@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<countries>
+	<country>
+		<name>Bulgaria</name>
+		<language>Bulgarian</language>
+		<flag>..\..\..\ViewModels\Images\Bulgaria.png</flag>
+		<towns>
+			<town>
+				<name>Sofia</name>
+				<population>1291591</population>
+			</town>
+			<town>
+				<name>Plovdiv</name>
+				<population>366779</population>
+			</town>
+			<town>
+				<name>Varna</name>
+				<population>346644</population>
+			</town>
+		</towns>
+	</country>	
+	<country>
+		<name>Germany</name>
+		<language>German</language>
+		<flag>..\..\..\ViewModels\Images\Germany.png</flag>
+		<towns>
+			<town>
+				<name>Munich</name>
+				<population>1378000</population>
+			</town>
+			<town>
+				<name>Dortmund</name>
+				<population>580956</population>
+			</town>
+			<town>
+				<name>Hamburg</name>
+				<population>1802000</population>
+			</town>
+		</towns>
+	</country>	
+	<country>
+		<name>England</name>
+		<language>English</language>
+		<flag>..\..\..\ViewModels\Images\England.png</flag>
+		<towns>
+			<town>
+				<name>London</name>
+				<population>8174000</population>
+			</town>
+			<town>
+				<name>Manchester</name>
+				<population>512000</population>
+			</town>
+			<town>
+				<name>Liverpool</name>
+				<population>552267</population>
+			</town>
+		</towns>
+	</country>	
+	<country>
+		<name>United States</name>
+		<language>English</language>
+		<flag>..\..\..\ViewModels\Images\UnitedStates.png</flag>
+		<towns>
+			<town>
+				<name>New York</name>
+				<population>19570261</population>
+			</town>
+			<town>
+				<name>Chicago</name>
+				<population>2707000</population>
+			</town>
+			<town>
+				<name>Los Angeles</name>
+				<population>3857799</population>
+			</town>
+		</towns>
+	</country>
+</countries>
+  

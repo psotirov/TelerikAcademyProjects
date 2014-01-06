@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 4 - Task 2</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 4 - Task 2</h1>
+        <h3>Compares two Arrays of character lexicographically</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">First Array - just string</label>
+            <input id="param1" type="text" />
+            <label for="param2">Second Array - just string</label>
+            <input id="param2" type="text" />
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var param1 = new Array();
+            param1 = document.getElementById('param1').value.split(""); // takes an input agruments
+            var param2 = new Array();
+            param2 = document.getElementById('param2').value.split(""); // takes an input agruments
+            var len = (param1.length < param2.length) ? param1.length : param2.length; // the shortest array's length
+            var comp = 0; // both arrays are equal
+            for (var i = 0; i < len; i++) { // iterates through its elements 
+                if (param1[i] == param2[i]) continue; // loops until characters at the same position of both arrays are equal
+                if (param1[i] > param2[i]) comp = 1;
+                else comp = -1;
+            }
+            if (comp == 0 && param1.length < param2.length) comp = -1; // adjustments when one array fits into the other
+            if (comp == 0 && param1.length > param2.length) comp = 1;
+            var result = "Array1: " + param1.join(", ") + "<br />"; // prepares the output for the first array
+            result += "Array2: " + param2.join(", ") + "<br />"; // prepares the output for the second array
+            result += "Array1 is " + ((comp==0)?"EQUAL to":(comp>0)?"GREATER than":"LESS than") + "Array2"; // prepares the output for the comparison
+ 
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+    </script>
+</body>
+</html>
+
+ 

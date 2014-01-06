@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 5 - Task 2</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 5 - Task 2</h1>
+        <h3>Returns the given number with reversed digits, i.e. 562 -> 265</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">Integer number</label>
+            <input id="param1" type="text" />
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var param1 = Math.abs(parseInt(document.getElementById('param1').value));
+            var result = "The reversed number is " + reverse(param1);
+
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+
+        function reverse(number) {
+            var output = 0;
+            while (number > 0) { // iterates through the number's digits
+                output = output * 10 + number % 10; // put the number last digit as result's last digit
+                number = Math.floor(number / 10); // extracts this digit from input string
+            }
+            return output;
+        }
+    </script>
+</body>
+</html>
+
+ 

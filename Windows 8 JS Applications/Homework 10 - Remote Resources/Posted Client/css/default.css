@@ -1,0 +1,23 @@
+﻿body {
+}
+
+#output {
+    display:block;
+    padding:10px;
+    width: 80%;
+    height: 600px;
+    border:1px solid white;
+    overflow-y:scroll;
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+}
+
+@media screen and (-ms-view-state: snapped) {
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+}

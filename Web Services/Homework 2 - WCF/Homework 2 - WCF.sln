@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFSimpleService", "WCFSimpleService\WCFSimpleService.csproj", "{BF4D8766-649B-4FBF-B0E3-C50266963C3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleServiceHost", "SimpleServiceHost\SimpleServiceHost.csproj", "{CBEF50CF-6007-4807-AE18-6F4EAF872226}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BF4D8766-649B-4FBF-B0E3-C50266963C3B} = {BF4D8766-649B-4FBF-B0E3-C50266963C3B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFStringCompare", "WCFStringCompare\WCFStringCompare.csproj", "{9FCFD90A-2323-4E98-93D1-1F2B1EB23972}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCompareClient", "StringCompareClient\StringCompareClient.csproj", "{6139F451-33C2-4FDE-B22A-B4FADE6C84A2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9FCFD90A-2323-4E98-93D1-1F2B1EB23972} = {9FCFD90A-2323-4E98-93D1-1F2B1EB23972}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF4D8766-649B-4FBF-B0E3-C50266963C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF4D8766-649B-4FBF-B0E3-C50266963C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF4D8766-649B-4FBF-B0E3-C50266963C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF4D8766-649B-4FBF-B0E3-C50266963C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBEF50CF-6007-4807-AE18-6F4EAF872226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBEF50CF-6007-4807-AE18-6F4EAF872226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBEF50CF-6007-4807-AE18-6F4EAF872226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBEF50CF-6007-4807-AE18-6F4EAF872226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FCFD90A-2323-4E98-93D1-1F2B1EB23972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FCFD90A-2323-4E98-93D1-1F2B1EB23972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FCFD90A-2323-4E98-93D1-1F2B1EB23972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FCFD90A-2323-4E98-93D1-1F2B1EB23972}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6139F451-33C2-4FDE-B22A-B4FADE6C84A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6139F451-33C2-4FDE-B22A-B4FADE6C84A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6139F451-33C2-4FDE-B22A-B4FADE6C84A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6139F451-33C2-4FDE-B22A-B4FADE6C84A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

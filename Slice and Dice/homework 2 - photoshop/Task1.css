@@ -1,0 +1,27 @@
+section {
+	width:60%;
+	margin: 0 auto;
+	background-color: Lavender;
+	border: 1px solid grey;
+	border-radius: 5px;
+	padding: 10px;
+}
+section div.btn {
+	display:inline-block;
+	margin:50px;
+}
+section div.btn a {
+	display:inline-block;
+	padding: 10px;
+	background:url(button-body.png);
+	background-size: 100% 100%;
+	background-repeat: repeat-x;
+	text-decoration:none;
+	font-size: 1.2em;
+}
+section div.btn span.left{
+	display:inline-block;
+	width:18px;
+	height:42px;
+	background:url(button-left.png);
+}

@@ -1,0 +1,259 @@
+﻿<UserControl x:Class="LayoutControlsInSilverlight.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="900" d:DesignWidth="820">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!-- TASK 1 -->
+        <StackPanel Orientation="Horizontal">
+            <TextBox 
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                Margin="10"
+                Text="Content here"
+                />
+            <TextBox 
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                Margin="10"
+                Text="Content here"
+                />
+            <TextBox 
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                Margin="10"
+                Text="Content here"
+                />
+            <Border
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                Margin="10">
+                <StackPanel Orientation="Vertical">
+                    <TextBox 
+                        BorderBrush="Gray" 
+                        BorderThickness="1"
+                        Padding="5"
+                        Margin="10"
+                        Text="Content here"
+                        />
+                    <TextBox 
+                        BorderBrush="Gray" 
+                        BorderThickness="1"
+                        Padding="5"
+                        Margin="10"
+                        Text="Content here"
+                        />
+                    <TextBox 
+                        BorderBrush="Gray" 
+                        BorderThickness="1"
+                        Padding="5"
+                        Margin="10"
+                        Text="Content here"
+                        />
+                </StackPanel>
+            </Border>
+            <Border
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                Margin="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBox
+                        Grid.ColumnSpan="3"
+                        BorderBrush="Gray" 
+                        BorderThickness="1"
+                        Padding="5"
+                        Margin="10"
+                        Text="Content here"
+                        />
+                    <TextBox
+                        Grid.Row="1"
+                        Grid.RowSpan="2"
+                        BorderBrush="Gray" 
+                        BorderThickness="1"
+                        Padding="5"
+                        Margin="10"
+                        Text="Content here"
+                        />
+                    <TextBox
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        BorderBrush="Gray" 
+                        BorderThickness="1"
+                        Padding="5"
+                        Margin="10"
+                        Text="Content here"
+                        />
+                    <TextBox 
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        BorderBrush="Gray" 
+                        BorderThickness="1"
+                        Padding="5"
+                        Margin="10"
+                        Text="Content here"
+                        />
+                    <TextBox 
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        BorderBrush="Gray" 
+                        BorderThickness="1"
+                        Padding="5"
+                        Margin="10"
+                        Text="Content here"
+                        />
+                </Grid>
+            </Border>
+        </StackPanel>
+
+    <!-- Second view of Task 1 -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition  Width="5"/>
+                <ColumnDefinition />
+                <ColumnDefinition  Width="5"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition  Height="5"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBox 
+                Grid.Column="0" 
+                Grid.Row="0" 
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                Margin="10"
+                Text="Content here"
+                />
+            <TextBox 
+                Grid.Column="2" 
+                Grid.Row="0" 
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                Margin="10"
+                Text="Content here"
+                />
+            <TextBox 
+                Grid.Column="4" 
+                Grid.Row="0" 
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                Margin="10"
+                Text="Content here"
+                />
+            <TextBox 
+                Grid.Column="0" 
+                Grid.Row="2" 
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                Margin="10"
+                Text="Content here"
+                />
+            <TextBox
+                Grid.Column="2" 
+                Grid.Row="2" 
+                Grid.ColumnSpan="3" 
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                 Margin="10"
+                Text="Content here"
+                />
+        </Grid>
+
+    <!-- TASK 2 -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                Margin="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Grid.Column="0">Button</Button>
+                    <Button Grid.Row="0" Grid.Column="1">Button</Button>
+                    <Button Grid.Row="0" Grid.Column="2">Button</Button>
+                    <Button Grid.Row="0" Grid.Column="3">Button</Button>
+                    <Button Grid.Row="1" Grid.Column="0">Button</Button>
+                    <Button Grid.Row="1" Grid.Column="1">Button</Button>
+                    <Button Grid.Row="1" Grid.Column="2">Button</Button>
+                    <Button Grid.Row="1" Grid.Column="3">Button</Button>
+                    <Button Grid.Row="2" Grid.Column="0">Button</Button>
+                    <Button Grid.Row="2" Grid.Column="1">Button</Button>
+                    <Button Grid.Row="2" Grid.Column="2">Button</Button>
+                    <Button Grid.Row="2" Grid.Column="3">Button</Button>
+                </Grid>
+            </Border>
+            <Border
+                Grid.Column="1"
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                Margin="10">
+                <Canvas>
+                    <Button Canvas.Left="10" Width="250" Height="50">I'm Button</Button>
+                    <Button Canvas.Left="50" Canvas.Top="40" Width="250" Height="30">I'm Button</Button>
+                </Canvas>
+            </Border>
+            <Border
+                Grid.Row="1"
+                BorderBrush="Gray" 
+                BorderThickness="1"
+                Padding="5"
+                Margin="10">
+                <Button Margin="40, 20, 10, 20">I'm Button</Button>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Homework 2 - Task 3</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript2 Homework 2 - Task 3</h1>
+        <h3>Creates a module that prints formatted messages, errors and warnings to the console and screen</h3>
+        <h4>Please start the example</h4>
+        <div id="indata"> 
+            <button id="stop" onclick="testPrint()">Print!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        var specialConsole = (function () {
+            var container = document.getElementById('result'); // task visual container
+
+            function format() {
+                var result = "";
+                if (arguments.length) {
+                    result = arguments[0].toString();
+                    for (var i = 1, len = arguments.length; i < len; i++) {
+                        result = result.replace("{" + (i-1) + "}", arguments[i].toString());
+                    }
+                }
+
+                return result;
+            }
+
+            function printToScreen(text, color) {
+                var output = document.createElement('p');
+                if (container && output) {
+                    output.style.color = color;
+                    text = text || "&nbsp;";
+                    output.innerHTML = text;
+                    container.appendChild(output);
+                }
+            }
+
+            function writeLine() {
+                var result = format.apply(null, arguments);
+                console.log(result);
+                printToScreen(result, "black");
+            }
+
+            function writeError() {
+                var result = format.apply(null, arguments);
+                console.error(result);
+                printToScreen(result, "red");
+            }
+
+            function writeWarning() {
+                var result = format.apply(null, arguments);
+                console.warn(result);
+                printToScreen(result, "green");
+            }
+
+            return {
+                writeLine: writeLine,
+                writeError: writeError,
+                writeWarning: writeWarning
+            };
+        })();
+
+        function testPrint() {
+            specialConsole.writeLine("This is unformatted message");
+            specialConsole.writeLine("This is {0} {1} message", 1, "text");
+            specialConsole.writeLine();
+            specialConsole.writeWarning("Previous line was empty");
+            specialConsole.writeWarning("This is {0} warning in total {1} lines", 1, 5);
+            specialConsole.writeError("This is {0} error in total {1} lines", 1, 5+1);
+        }
+    </script>
+</body>
+</html>
+
+ 

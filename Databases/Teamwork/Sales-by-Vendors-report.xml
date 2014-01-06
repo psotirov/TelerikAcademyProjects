@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sales>
+  <sale vendor="Nestle Sofia Corp.">
+    <summary date="20-Jul-2013" total-sum="16.00" />
+  </sale>
+  <sale vendor="Targovishte Bottling Company Ltd.">
+    <summary date="20-Jul-2013" total-sum="80.00" />
+  </sale>
+  <sale vendor="Zagorka Corp.">
+    <summary date="21-Jul-2013" total-sum="54.50" />
+    <summary date="22-Jul-2013" total-sum="15.00" />
+  </sale>
+</sales>

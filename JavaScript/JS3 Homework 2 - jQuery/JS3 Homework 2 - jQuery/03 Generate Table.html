@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript3 Homework 2 - Task 3</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#result { position:relative; width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        .students { text-align: center; margin:10px auto; border-collapse:collapse; border: 2px solid #222; }
+        .students th,.students td { padding: 10px; border: 1px solid #333; } 
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript3 Homework 2 - Task 3</h1>
+        <h3>Generate students table</h3>
+        <div id="result"></div>
+    </div>
+    <script src="Scripts/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var students = [
+                    { FirstName: "Peter", LastName: "Ivanov", Grade: 3 },
+                    { FirstName: "Milena", LastName: "Grigorova", Grade: 6 },
+                    { FirstName: "Gergana", LastName: "Borisova", Grade: 12 },
+                    { FirstName: "Boyko", LastName: "Petrov", Grade: 7 },
+            ];
+            var table = $("<table/>").addClass("students");
+            var thead = $("<tr/>")
+            .append($("<th/>").text("First name"))
+            .append($("<th/>").text("Last name"))
+            .append($("<th/>").text("Grade"));
+            table.append(thead);
+
+            for (var i = 0; i < students.length; i++) {
+                var row = $("<tr/>")
+                .append($("<td/>").text(students[i].FirstName))
+                .append($("<td/>").text(students[i].LastName))
+                .append($("<td/>").text(students[i].Grade));
+                table.append(row);
+            }
+            $("#result").append(table);
+
+            // WRONG: $("body").append("<table/>").append("<tr/>").append("<td/>");
+            // CORRECT: $("body").append($("<table/>").append($("<tr/>").append("<td/>")));
+        });
+    </script>
+</body>
+</html>

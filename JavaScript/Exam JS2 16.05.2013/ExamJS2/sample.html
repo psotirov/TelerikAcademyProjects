@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Exam 16.05.2013 - evening</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript2 Exam 16.05.2013 - evening</h1>
+        <h3>Implementation of ImageGallery control</h3>
+        <div id="result">
+            <p>JavaScript is not supported</p>
+        </div>
+        <div id="second">
+            <p>JavaScript is not supported</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="Album.js"></script>
+    <script type="text/javascript" src="Image.js"></script>
+    <script type="text/javascript" src="ImageGallery.js"></script>
+    <!--script type="text/javascript" src="Storage.js"></script-->
+    <script type="text/javascript">
+        var gallery = controls.getImageGallery("result");
+        gallery.addImage("lion pic 3", "th_lion.jpg");
+        gallery.addImage("lion pic 2", "th_lion.jpg");
+        gallery.addImage("lion pic 1", "th_lion.jpg");
+        var album1 = gallery.addAlbum("Lions album");
+        album1.addImage("a1 lion pic 1", "th_lion.jpg");
+        album1.addImage("a1 lion pic 2", "th_lion.jpg");
+        album1.addImage("a1 lion pic 3", "th_lion.jpg");
+        var inalbum1 = album1.addAlbum("Lions Q album inner");
+        inalbum1.addImage("ia1 lion pic 1", "th_lion.jpg");
+        inalbum1.addImage("ia1 lion pic 2", "th_lion.jpg");
+        inalbum1.addImage("ia1 lion pic 3", "th_lion.jpg");
+        var inalbum2 = album1.addAlbum("Lions D album inner");
+        inalbum2.addImage("ia1 lion pic 1", "th_lion.jpg");
+        inalbum2.addImage("ia1 lion pic 2", "th_lion.jpg");
+        inalbum2.addImage("ia1 lion pic 3", "th_lion.jpg");
+        var inalbum3 = album1.addAlbum("Lions Z album inner");
+        inalbum3.addImage("ia1 lion pic 1", "th_lion.jpg");
+        inalbum3.addImage("ia1 lion <br />pic 2", "th_lion.jpg");
+        inalbum3.addImage("ia1 lion pic 3", "th_lion.jpg");
+        var inalbum4 = album1.addAlbum("Lions A<br/> album inner");
+        gallery.renderGallery();
+
+        /* / Tasks 4, 5, 6 - grouped together in a single object - load/save gallery to localStorage
+        imageGalleryRepository.save("lions-gallery", gallery);
+        var newGalleryData = imageGalleryRepository.load("lions-gallery");
+        var secondGallery = controls.buildImageGallery("second", newGalleryData);
+        secondGallery.renderGallery();*/
+    </script>
+</body>
+</html>
+
+ 

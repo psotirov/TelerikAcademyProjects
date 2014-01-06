@@ -1,0 +1,43 @@
+﻿<Window x:Class="_4.PersonAge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:validator="clr-namespace:AgeValidator" 
+        Title="MainWindow" Height="350" Width="525">
+    
+    <Window.Resources>
+        <Style TargetType="{x:Type Slider}">
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <WrapPanel>
+                            <Border BorderBrush="Red" BorderThickness="2" VerticalAlignment="Top">
+                                <AdornedElementPlaceholder  />
+                            </Border>
+                            <TextBlock Foreground="Red" FontSize="12pt">!</TextBlock>
+                        </WrapPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel>
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <Label Width="100">Person Name</Label>
+            <TextBox Width="200"></TextBox>
+        </StackPanel>
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <Label Width="100">Person Age</Label>
+            <Label Width="100" Content="{Binding ElementName=sldAge, Path=Value}"></Label>
+        </StackPanel>
+        <Slider Name="sldAge" Minimum="1" Maximum="100" Margin="20">
+            <Slider.Value>
+                <Binding Path="Age" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validator:AgeValidationRule MinimumAge="20" MaximumAge="80" ErrorMessage="Age is out of range." />
+                    </Binding.ValidationRules>
+                </Binding>
+            </Slider.Value>
+        </Slider>
+    </StackPanel>
+</Window>

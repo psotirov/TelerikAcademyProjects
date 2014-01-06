@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 2 - Task 8</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            width: 100%;
+        }
+        h1, h3, h4 {
+            text-align:center;
+            margin:5px 0;
+            padding:0;
+        }
+        div#wrapper {
+            width:90%;
+            height:100%;
+            margin:0 auto;
+            background-color:#c2c6cc;
+        }
+        div#indata, div#result {
+            width: 90%;
+            border: 1px solid black;
+            padding: 5px;
+            margin:5px auto;
+            text-align:center;
+        }
+        div#indata * {
+            display:inline-block;
+            float:left;
+            margin:10px;
+        }
+        div#indata::after {
+            content: "";
+		    display: block;
+		    height: 0;
+		    overflow: hidden;
+		    clear:both;
+        }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 2 - Task 8</h1>
+        <h3>Say number in words</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">Integer number</label>
+            <input id="param1" type="text" />
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var n = Math.floor(parseFloat(document.getElementById('param1').value));
+            var result = "Wrong input";
+            var words = new Array( new Array("","one", "two", "three", "four", "five", "six", "seven", "eight", "nine"),
+                                   new Array("","", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"),
+                                   new Array("","one", "two", "three", "four", "five", "six", "seven", "eight", "nine"));
+            var specials = new Array("ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen");
+
+            if ((n >= 0) && (n <= 999)) {
+                result = "The number "+ n + " in words is ";
+                if (n == 0) result += "zero";
+                else {
+                    var digit = Math.floor(n / 100); // takes hundreds
+                    n = n % 100; // in the "n" is the remainder (tens and ones)
+                    result += words[0][digit];
+                    if (digit > 0) {
+                        result += " hundred";
+                        if (n > 0) {
+                            result += " "; // space between hundreds and the rest
+                            if (n < 20 || n % 10 == 0) result += "and "; // if only special tens and ones follows
+                        }
+                    }
+                    digit = Math.floor(n / 10); // takes tens
+                    n = n % 10; // in the "n" is the remainder (ones)
+                    if (digit != 1) { // for standard numbers construction, for example 2X = twenty xxxxxxxx
+                        result += words[1][digit];
+                        if ((digit > 0) && (n > 0)) result += " "; // space between tens and ones
+                        result += words[2][n];
+                    }
+                    else result += specials[n]; // only special tens, for example 15 = fifteen
+                }
+            }
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+    </script>
+</body>
+</html>
+
+ 

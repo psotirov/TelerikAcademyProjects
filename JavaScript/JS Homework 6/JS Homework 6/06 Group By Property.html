@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 6 - Task 6</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata input#param1 { width:40%; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 6 - Task 6</h1>
+        <h3>Group an array of objects by a given property</h3>
+        <h4 id="objects"></h4>
+        <div id="indata"> 
+            <label for="param1">Property</label>
+            <input id="param1" type="text" value="age"/>
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        // Immeadiate start on document load
+        obj = [];
+        obj[0] = { firstName: "Pesho", lastName: "Peshov", age: 23 };
+        obj[1] = { firstName: "Gosho", lastName: "Goshov", age: 32 };
+        obj[2] = { firstName: "Tosho", lastName: "Goshov", age: 23 };
+        obj[3] = { firstName: "Tosho", lastName: "Tishov", age: 32 };
+        obj[4] = { firstName: "Lacho", lastName: "Peshov", age: 92 };
+        var data = "";
+        Object.prototype.Print = PrintObject; //adds function ToString as prototype of an Object
+        for (var i=0; i < obj.length; i++) {
+            data += obj[i].Print();
+        }
+        document.getElementById('objects').innerHTML = data;
+
+        function result() {
+            var group = Group(document.getElementById('param1').value);
+            var result = "The grouped array is " + group.Print();
+
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+
+        function PrintObject() {
+            var result = "Object {";
+            for (var prop in this) { // iterates through each object property
+                if (prop != "Print") { // shows property:value pair
+                    result += prop + ":" + this[prop] + "  "; // otherwise just prints its value
+                }
+            }
+            result += "}<br />"
+            return result;
+        }
+
+        function Group(property) {
+            var result = {}; // creates an empty object
+            for (var i in obj) { // iterates through each array of persons
+                // each group value is a new property in the result object and has its value as a list of person objects 
+                // for example if we have two persons "Pesho" and "Gosho" with age:23 and we have property="age" 
+                // as a result we wil have result[23] = ["Pesho", "Gosho"]
+
+                if (obj[i][property] == null) continue; // if there is no such property goes further
+                if (result[obj[i][property]] == undefined) result[obj[i][property]]=""; // if this proprety is new clears it
+                result[obj[i][property]] += obj[i].Print(); // adds the item as a string into the suitable result property
+            }
+            return result;
+        }
+
+    </script>
+</body>
+</html>
+
+ 

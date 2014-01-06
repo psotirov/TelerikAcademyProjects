@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Homework 2 - Task 2</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+        div#result { height:500px; position:relative; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript2 Homework 2 - Task 2</h1>
+        <h3>Creates a module that controls circular and rectangular movement of DIVs</h3>
+        <h4>Please start the example</h4>
+        <div id="indata"> 
+            <button id="circular" onclick="testCircular()">Add circular moving DIV</button>
+            <button id="rectangular" onclick="testRectangular()">Add rectangular moving DIV</button>
+            <button id="stop" onclick="testStop()">Stop!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        var movingDivs = (function () {
+            var ROTATION_STEP = 10; // rotation angle step
+            var DELAY = 100; // timer delay interval
+            var handler = null; // timer event handler
+            var divsData = []; // divs data container holding Rx, Ry and angle values 
+            var container = document.getElementById('result'); // task visual container
+            if (container) {
+                var centerX = (container.clientWidth - 50) / 2; // center of the visual container 
+                var centerY = (container.clientHeight - 50) / 2;
+            }
+
+            function generateDiv(divType) {
+                var isRect = (divType == 'rect');
+                if ((!isRect && divType != 'ellipse') || !container) {
+                    return; // wrong type parameter or container not found, returns without any further processing
+                }
+
+                var aDiv = document.createElement('div');
+                aDiv.style.position = 'absolute';
+                aDiv.style.width = '30px';
+                aDiv.style.height = '30px';
+
+                //sets div content and colors
+                aDiv.style.backgroundColor = GenerateColor();
+                aDiv.style.color = GenerateColor();
+
+                // sets div border
+                aDiv.style.border = '5px solid ' + GenerateColor();
+                aDiv.style.borderRadius = (isRect) ? '5px' : '20px'; // ellipses have circular shape instead of rectangular
+
+                // sets internal data
+                var index = divsData.length; // first available index
+                var currentData = [];
+                currentData.Rx = Math.random() * (container.clientWidth / 2 - 100) + 50; // ellipse first radius
+                currentData.Ry = currentData.Rx * container.clientHeight / container.clientWidth; // ellipse second radius
+                currentData.angle = 0; // initial rotation angle
+                divsData[index] = currentData; // put current data into the array
+
+                // and finally its id and position within the wrapping container
+                aDiv.id = ((isRect) ? 'r' : 'e') + index;
+                aDiv.style.left = (centerX + currentData.Rx) + 'px';
+                aDiv.style.top = centerY + 'px';
+
+                container.appendChild(aDiv);
+                if (!handler) {
+                    handler = setInterval(Animate, DELAY); // function Animate will be repeated until pressing Stop button
+                }
+            }
+
+            function Animate() {
+                // selects all divs in the "result" region (our divs that we have to rotate)
+                var rotativelDivs = document.getElementById('result').getElementsByTagName('div'); // in order to work with IE7
+                for (var i = 0, countDivs = rotativelDivs.length; i < countDivs; i++) {
+                    var aDiv = rotativelDivs[i];
+                    if (!aDiv.id || aDiv.id.length < 2) { // div's id should contain type and index info (for example r0) 
+                        continue;
+                    }
+
+                    var index = parseInt(aDiv.id.substr(1, aDiv.id.length - 1));
+                    var angle = divsData[index].angle + ROTATION_STEP * Math.PI / 180;
+                    if (angle > 2 * Math.PI) { // ensures infinite rotation
+                        angle -= 2 * Math.PI;
+                    }
+
+                    var left = centerX;
+                    var top = centerY;
+                    if (aDiv.id[0] == 'e') { // elliptical movement
+                        left += divsData[index].Rx * Math.cos(angle);
+                        top += divsData[index].Ry * Math.sin(angle);
+                    } else { // rectangular movement
+                        var tempCos = Math.abs(Math.cos(angle)) * Math.cos(angle);
+                        var tempSin = Math.abs(Math.sin(angle)) * Math.sin(angle);
+                        left += divsData[index].Rx * (tempCos - tempSin);
+                        top += divsData[index].Ry * (tempCos + tempSin);
+                    }
+
+                    // new position
+                    aDiv.style.left = left + 'px';
+                    aDiv.style.top = top + 'px';
+                    divsData[index].angle = angle;
+                }
+            }
+
+            function stop() {
+                if (handler) {
+                    clearInterval(handler);
+                    handler = null;
+                }
+                document.getElementById('result').innerHTML = ""; // clear previous content
+                divsData = [];
+            }
+
+            function GenerateColor() {
+                var result = 'rgb(';
+                for (var i = 0; i < 3; i++) { // separate RGB values
+                    if (i) result += ',';
+                    result += parseInt(Math.random() * 256);
+                }
+
+                result += ')';
+                return result;
+            }
+
+            return {
+                add: generateDiv,
+                stop: stop
+            }
+        })();
+
+        function testCircular() {
+            movingDivs.add('ellipse');
+        }
+
+        function testRectangular() {
+            movingDivs.add('rect');
+        }
+
+        function testStop() {
+            movingDivs.stop();
+        }
+    </script>
+</body>
+</html>
+
+ 

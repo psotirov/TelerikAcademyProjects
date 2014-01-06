@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="SimpleAdvertisementSystem.WpfClient.Views.CategoriesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel>
+            <ListBox Name="lbCategories" ItemsSource="{Binding Categories}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <TextBox Name="CategoryTextBoxName"  Text="{Binding CategoryName}"></TextBox>
+<!--            add category-->
+            <Button Command="{Binding AddCategory}" 
+                FontSize="18"                
+                HorizontalAlignment="Left">Add Category</Button>
+<!--            end add category-->
+            <Button
+                Margin="20 20 0 0"
+                HorizontalAlignment="Left"
+                Command="{Binding ShowAllAdvertisementsByCategory}"
+                CommandParameter="{Binding ElementName=lbCategories, Path=SelectedIndex}"
+                Content="View Category Advertisements" />
+            <ListBox Name="lbTagPosts" Visibility="Visible" ItemsSource="{Binding CategoryPosts}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Title}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

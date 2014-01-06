@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript BGCoder Wrapper</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata input#param1 { width:80%; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript BGCoder Wrapper</h1>
+        <h3>Task 01 - Finds max sum of consecutive numbers in a array</h3>
+        <h4>Please enter input data(separated by ',')</h4>
+        <div id="indata"> 
+            <label for="param1">Input data</label>
+            <input id="param1" type="text" />
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var params = document.getElementById('param1').value.split(','); // reads the string
+
+            var result = Solve(params);
+
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+
+        function Solve(args) {
+            var len = parseInt(args[0]);
+            var array = new Array(len);
+
+            for (var i = 0; i < len; i++) { // reads the input values
+                array[i] = parseInt(args[i+1]);
+            }
+
+            var sumMax = array[0]; // initial current sum and initial current sumMax
+            var countMax = 1; // both consists of only first array element
+            var posMax = 0;
+            var sum = array[0];
+            var count = 1;
+            var pos = 0;
+
+            // Algorithm was implemented in one of the C# homeworks
+            // one loop solution - the algorithm has two partial sums, initial positions and their elements counters
+            // first - candidate for sunMax, posMax, countMax - keeps the maximal sum of elements until current position in the array
+            // second - current sum, pos, count - adds elements until the sum (both with element) is greater than the element.
+            // In this case it means that the previous sum is negative and we can start again.  
+            // After that compares the current sum with sumMax and selects the greater as sumMax.
+            // The algorithm is invented first by Joseph B. Kadane in 1984. 
+
+            for (var i = 1; i < len; i++) {
+                sum += array[i]; // adds next element to the sum
+                count++;
+                if (sum < array[i]) { // if this element is greater than the sum - throw away the sum and start from here
+                    sum = array[i];
+                    pos = i;
+                    count=1;
+                }
+                if (sum > sumMax) {// checks if we have better sum sequence
+                    sumMax = sum; // updates sumMax, its position and counter
+                    posMax = pos;
+                    countMax = count;
+                }
+            }
+            return sumMax;
+        }
+    </script>
+</body>
+</html>

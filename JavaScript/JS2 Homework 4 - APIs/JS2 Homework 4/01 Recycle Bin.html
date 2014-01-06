@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Homework 4 - Task 1 to 3</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#result { position:relative; height: 500px; background: url('grass.png') repeat #383;}
+        div#bin { margin:20px; width: 70px; height:150px; position:absolute; top:0; right:50%; background: url('bin.png') no-repeat transparent; }
+        .trash {width: 48px; height:48px; position:absolute; top:50px; left:50px; }
+    </style>
+    <script type="text/javascript" src="StorageShim.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript2 Homework 4 - Task 1 to 3</h1>
+        <h3>Recycle Bin that implements Drag&amp;Drop feature, time based score and hall of fame using local storage</h3>
+         <div id="indata"> 
+            <h4>Time elapsed: <span id="time">0</span></h4>
+            <button id="score" onclick="showResults()">Show Hall of Fame</button>
+            <button id="run" onclick="createTrash()">Start Game!</button>
+        </div> 
+        <div id="result">
+        </div>
+     </div>
+    <script type="text/javascript">
+        var container = document.getElementById('result'); // task container
+        var gameScore = 0; // current score i.e. time elapsed in seconds
+        var garbageCount = 20; // number of trashes on the board
+        var timerHandler = null;
+
+        function onDragOver(ev) {
+            // stop bubbling / capturing
+            ev = ev || window.event; // IE
+            ev.stopPropagation();
+            ev.preventDefault();
+            document.getElementById('bin').style.backgroundPosition = "-70px 0";
+        }
+
+        function onDragLeave(ev) {
+            // stop bubbling / capturing
+            ev = ev || window.event; // IE
+            ev.stopPropagation();
+            ev.preventDefault();
+            document.getElementById('bin').style.backgroundPosition = "0 0";
+        }
+
+        function onDrag(ev) {
+            ev = ev || window.event; // IE
+            ev.dataTransfer.setData("dragdata", ev.target.id);
+        }
+
+        function onDrop(ev) {
+            // stop bubbling / capturing
+            ev = ev || window.event; // IE
+            ev.stopPropagation();
+            ev.preventDefault();
+
+            var data = ev.dataTransfer.getData("dragdata");
+            var element = document.getElementById(data);
+            container.removeChild(element);
+            document.getElementById('bin').style.backgroundPosition = "0 0";
+            garbageCount--;
+            if (garbageCount == 0) {
+                onGameFinish();
+            }
+        }
+
+        function onEverySecond() {
+            gameScore++;
+            document.getElementById('time').innerHTML = gameScore;
+        }
+
+        function onGameFinish() {
+            clearInterval(timerHandler);
+            container.innerHTML = '';
+            var name = window.prompt("You win! Please enter your name: ", "Anonymous");
+            if (name && (!localStorage[name] || localStorage[name] > gameScore)) {
+                 localStorage.setItem(name, gameScore);
+            }
+        }
+
+        function createTrash() {
+            // stop the timer if started
+            if (timerHandler) {
+                clearInterval(timerHandler);
+            }
+            // reset field
+            container.innerHTML = '<div id="bin" ondrop="onDrop(event)" ondragover="onDragOver(event)" ondragleave="onDragLeave(event)"></div>';
+            gameScore = 0;            
+            garbageCount = 20; // 20 trashes by default
+            var maxWidth = parseInt(container.clientWidth);
+            var maxHeight = parseInt(container.clientHeight);
+            var binPosX = parseInt(document.getElementById('bin').offsetLeft);
+
+            var wrapper = document.createDocumentFragment(); // using temporary wrapper for better performance
+            for (var i = 0; i < garbageCount; i++) {
+                // creates an img and sets its dimensions 
+                var image = document.createElement('img');
+                image.src = 'garbage.png';
+                image.id = 'trash'+(i+1);
+                image.style.position = 'absolute';
+                image.style.width = '48px';
+                image.style.height = '48px';
+
+                // and its random position but within the wrapping container
+                // also avoid bin overlapping
+                do {
+                    var posLeft = parseInt(Math.random() * (parseInt(container.clientWidth) - 70) + 20);
+                    var posTop = parseInt(Math.random() * (parseInt(container.clientHeight) - 70) + 20);
+                } while (posTop < 150 && posLeft > binPosX - 60 && posLeft < binPosX + 80);
+
+                image.style.left = posLeft + 'px';
+                image.style.top = posTop + 'px';
+
+                // attach drag events
+                image.draggable = 'true';
+                image.ondragstart = onDrag;
+                wrapper.appendChild(image);
+            }
+
+            container.appendChild(wrapper);
+            timerHandler = setInterval(onEverySecond, 1000);
+        }
+
+        function showResults() {
+            var results = new Array();
+            if (localStorage.length > 0) {
+                for (i = 0; i < localStorage.length; i++) {
+                    results[localStorage.key(i)] = parseInt(localStorage.getItem(localStorage.key(i)));
+                }
+            }
+            results = results.sort(function (a, b) { return a - b; });
+            var topScore = 'Hall of fame\n';
+            var place = 1;
+            for (var item in results) {
+                topScore += (place++) + '. - ' + item + ' - ' + results[item] + '\n';
+            }
+
+            window.alert(topScore);
+        }
+   </script>
+</body>
+</html>
+
+ 

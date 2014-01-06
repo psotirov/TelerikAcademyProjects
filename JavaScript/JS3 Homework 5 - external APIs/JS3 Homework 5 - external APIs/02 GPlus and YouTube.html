@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript3 Homework 5 - Task 2</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4, ul { text-align:center; margin:5px 0; padding:0; }
+        #wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        #result { position:relative; width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        #result ul { list-style-type: none;  margin: 0 70px; }
+        #result ul li { display:inline; line-height:25px; padding: 0 10px; margin:0 20px 10px 0; background-color:#6d6; }
+        #map-canvas { margin: 0 70px; height: 400px; }        
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript3 Homework 5 - Task 2</h1>
+        <h3>Combines Google+ and You Tube APIs</h3>
+        <div id="result">
+            <div id="googlePlus">
+                <button id="gPlusConnectButton" class="g-signin"
+                    data-scope="https://www.googleapis.com/auth/plus.login"
+                    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                    data-clientId="169309597603-4nvp5aqgpim76hci61a0gqtcarsqevu0.apps.googleusercontent.com"
+                    data-callback="onSignInCallback"
+                    data-theme="dark"
+                    data-cookiepolicy="single_host_origin">
+                </button>
+                <button id="gPlusDisconnectButton" style="display:none">Disconnect your Google account from this app</button>
+                <div id="gPlusLoadError">This section should be hidden. If you can see this message, you may be viewing the file rather than running a web server. The file must be run from http or https. See instructions at <a href="https://developers.google.com/+/quickstart/javascript">https://developers.google.com/+/quickstart/javascript</a>.</div>
+                <div id="gPlusProfile"></div>
+            </div>
+            <div id="youTubePlayer"></div>
+        </div>
+    </div>
+    <script src="script/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript">
+        // attaching googlePlus API asynchonously
+        (function () {
+            var po = document.createElement('script');
+            po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://plus.google.com/js/client:plusone.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(po, s);
+        })();
+    </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script/gp-youtube.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#gPlusDisconnectButton').click(gPlusHelper.disconnect);
+            $('#gPlusLoadError').hide();
+        });
+    </script>
+</body>
+</html>

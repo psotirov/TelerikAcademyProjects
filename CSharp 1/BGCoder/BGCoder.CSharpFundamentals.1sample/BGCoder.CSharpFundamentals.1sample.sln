@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.CartesianCoordinateSystem", "1.CartesianCoordinateSystem\1.CartesianCoordinateSystem.csproj", "{084DADB9-F050-4AF9-A5FD-C6B62C88AB1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.MissCat2011", "2.MissCat2011\2.MissCat2011.csproj", "{D2B346A1-9C56-4D65-BBED-49E20C6C384A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.ForestRoad", "3.ForestRoad\3.ForestRoad.csproj", "{DC351D0A-020B-4494-B5AB-D2236CEA1A25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.BinaryDigitsCount", "4.BinaryDigitsCount\4.BinaryDigitsCount.csproj", "{820F4472-47A7-47F3-AAF5-8503D4EDD630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.SubsetSums", "5.SubsetSums\5.SubsetSums.csproj", "{35F467C5-E90B-498B-99FC-E61F9A45D1C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{084DADB9-F050-4AF9-A5FD-C6B62C88AB1B}.Debug|x86.ActiveCfg = Debug|x86
+		{084DADB9-F050-4AF9-A5FD-C6B62C88AB1B}.Debug|x86.Build.0 = Debug|x86
+		{084DADB9-F050-4AF9-A5FD-C6B62C88AB1B}.Release|x86.ActiveCfg = Release|x86
+		{084DADB9-F050-4AF9-A5FD-C6B62C88AB1B}.Release|x86.Build.0 = Release|x86
+		{D2B346A1-9C56-4D65-BBED-49E20C6C384A}.Debug|x86.ActiveCfg = Debug|x86
+		{D2B346A1-9C56-4D65-BBED-49E20C6C384A}.Debug|x86.Build.0 = Debug|x86
+		{D2B346A1-9C56-4D65-BBED-49E20C6C384A}.Release|x86.ActiveCfg = Release|x86
+		{D2B346A1-9C56-4D65-BBED-49E20C6C384A}.Release|x86.Build.0 = Release|x86
+		{DC351D0A-020B-4494-B5AB-D2236CEA1A25}.Debug|x86.ActiveCfg = Debug|x86
+		{DC351D0A-020B-4494-B5AB-D2236CEA1A25}.Debug|x86.Build.0 = Debug|x86
+		{DC351D0A-020B-4494-B5AB-D2236CEA1A25}.Release|x86.ActiveCfg = Release|x86
+		{DC351D0A-020B-4494-B5AB-D2236CEA1A25}.Release|x86.Build.0 = Release|x86
+		{820F4472-47A7-47F3-AAF5-8503D4EDD630}.Debug|x86.ActiveCfg = Debug|x86
+		{820F4472-47A7-47F3-AAF5-8503D4EDD630}.Debug|x86.Build.0 = Debug|x86
+		{820F4472-47A7-47F3-AAF5-8503D4EDD630}.Release|x86.ActiveCfg = Release|x86
+		{820F4472-47A7-47F3-AAF5-8503D4EDD630}.Release|x86.Build.0 = Release|x86
+		{35F467C5-E90B-498B-99FC-E61F9A45D1C9}.Debug|x86.ActiveCfg = Debug|x86
+		{35F467C5-E90B-498B-99FC-E61F9A45D1C9}.Debug|x86.Build.0 = Debug|x86
+		{35F467C5-E90B-498B-99FC-E61F9A45D1C9}.Release|x86.ActiveCfg = Release|x86
+		{35F467C5-E90B-498B-99FC-E61F9A45D1C9}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

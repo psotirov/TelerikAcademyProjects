@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Homework 1 - Task 2</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata input#param1 { width:40%; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+        div#result { height:500px; position:relative; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript2 Homework 1 - Task 2</h1>
+        <h3>Generates DIV elements and rotates them against screen center at a certain interval.</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">Number of DIVs</label>
+            <input id="param1" type="text" value="5"/>
+            <label for="param2">Delay interval (ms)</label>
+            <input id="param2" type="text" value="100"/>
+            <button id="run" onclick="result()">Run Script!</button>
+            <button id="stop" onclick="stop()">Stop!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        var handler;
+
+        function result() {
+            var countDivs = parseInt(document.getElementById('param1').value);
+            var delay = parseInt(document.getElementById('param2').value);
+
+            var container = document.getElementById('result'); // task container
+            container.innerHTML = ""; // clear previous content
+            GenerateDivs(countDivs); // generate DIVs
+            handler = setInterval(Animate, delay); // function Animate will be repeated until pressing Stop button
+        }
+
+        function Animate() {
+            var stepAngle = 10 * Math.PI / 180; // 10 degree step for rotation
+            // "imaginary" circle center
+            var centerX = (document.getElementById('result').clientWidth - 50) / 2;
+            var centerY = (document.getElementById('result').clientHeight - 50) / 2;
+
+            // selects all divs in the "result" region (our divs that we have to rotate)
+            var rotativelDivs = document.getElementById('result').getElementsByTagName('div'); // in order to work with IE7
+            for (var index = 0, countDivs = rotativelDivs.length; index < countDivs; index++) {
+                // rotates every single div using only its current position
+                // assumes that current div position could be transferred into cylindrical coordinates as follows:
+                // X = center + radius * cos(alpha) and Y center + radius * sin(alpha), where alpha is current angle position
+                // then obvioulsy newX = center + radius * cos(alpha + stepAngle) and newX = center + radius * sin(alpha + stepAngle)
+                // but also in trigonometry cos(a+b) = cos(a)*cos(b) - sin(a)*sin(b) and sin(a+b) = sin(a)*cos(b) + cos(a)*sin(b)
+                // and after some expression transformations we have the following result:
+                var aDiv = rotativelDivs[index];
+                var oldX = aDiv.offsetLeft - centerX;
+                var oldY = aDiv.offsetTop - centerY;
+                var dX = oldX * Math.cos(stepAngle) - oldY * Math.sin(stepAngle);
+                var dY = oldX * Math.sin(stepAngle) + oldY * Math.cos(stepAngle);
+
+                // new position
+                aDiv.style.left = centerX + dX + 'px';
+                aDiv.style.top = centerY + dY + 'px';
+             }
+        }
+
+        function stop() {
+            if (handler) {
+                clearInterval(handler);
+            }
+        }
+
+        function GenerateDivs(countDivs) {
+            countDivs = countDivs || 5;
+
+            var container = document.getElementById('result'); // task container
+            var wrapper = document.createDocumentFragment(); // using temporary wrapper for better performance
+            for (var i = 0; i < countDivs; i++) {
+                // creates a div and sets its dimensions 
+                var aDiv = document.createElement('div');
+                aDiv.style.position = 'absolute';
+                aDiv.style.width = '40px';
+                aDiv.style.height = '40px';
+
+                //sets div content and colors
+                aDiv.style.backgroundColor = GenerateColor();
+                aDiv.style.color = GenerateColor();
+                aDiv.innerHTML = "<strong>" + (i+1) + "</strong>";
+                
+                // sets div border
+                aDiv.style.border = '10px solid ' + GenerateColor();
+                aDiv.style.borderRadius = '20px';
+
+                // and finally its position but within the wrapping container relative to its center
+                var centerX = (container.clientWidth - 50) / 2;
+                var centerY = (container.clientHeight - 50) / 2;
+                var maxRadius = Math.min(centerX, centerY) - 30;
+                var posLeft = centerX + maxRadius * Math.cos(i * 2 * Math.PI / countDivs);
+                var posTop = centerY + maxRadius * Math.sin(i * 2 * Math.PI / countDivs);
+                aDiv.style.left = posLeft + 'px';
+                aDiv.style.top = posTop + 'px';
+
+                wrapper.appendChild(aDiv);
+            }
+
+            container.appendChild(wrapper);
+        }
+
+        function GenerateColor() {
+            var result = 'rgb(';
+            for (var i = 0; i < 3; i++) { // separate RGB values
+                if (i) result += ',';
+                result += parseInt(Math.random() * 256);
+            }
+
+            result += ')';
+            return result;
+        }
+    </script>
+</body>
+</html>
+
+ 

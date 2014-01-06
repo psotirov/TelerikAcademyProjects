@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 6 - Task 4</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata input#param1 { width:40%; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 6 - Task 4</h1>
+        <h3>Implements prototype method to check if object has certain property</h3>
+        <h4>Please enter an object as a JSON string</h4>
+        <div id="indata"> 
+            <label for="param1">Object</label>
+            <input id="param1" type="text" value="{ firstProperty: 'abcd', secondProperty: 'xyz', thirdProperty: 155 }"/>
+            <label for="param2">Property</label>
+            <input id="param2" type="text" value="thirdProperty"/>
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            Object.prototype.hasProperty = function (x) { return (this[x] != null); } //adds anonimous function hasProperty as prototype of an Object
+            eval("var obj =" + document.getElementById('param1').value); // evaluates JSON object and assigns it to "obj" variable
+            var property =document.getElementById('param2').value; // takes property name
+            var result = "No such property";
+            if (obj.hasProperty(property)) { // found such property 
+                result = property + " is a property of the object!";
+            }
+
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+    </script>
+</body>
+</html>
+
+ 

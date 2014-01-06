@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Repeater_control</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- Repeater_control references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/data.js"></script>
+    <script src="/js/repeater.js"></script>
+    <script src="/js/default.js"></script>
+</head>
+<body>
+    <div id="add-description">
+        <label for="manufact">Manufacturer: </label><input id="manufact" type="text"/>
+        <label for="name">Name: </label><input id="name" type="text"/>
+        <label for="price">Price: </label><input id="price" type="text"/>
+        <br />
+        <label for="model">Processor model: </label><input id="model" type="text"/>
+        <label for="freq">Processor frequency: </label><input id="freq" type="text"/>
+        <br />
+        <label for="image">Image link: </label><input id="image" type="text"/>
+        <button id="create-computer">Create computer description</button>
+    </div>
+    <!-- List View Template for grouped List -->
+    <div id="group-computer-template" data-win-control="WinJS.Binding.Template">
+        <div>
+            <div data-win-bind="innerText: manufacturer"></div>
+        </div>
+    </div>
+    <!-- List View Template for single data item in a List -->
+    <div id="computer-template" class="itemstyle" data-win-control="WinJS.Binding.Template">
+        <div>
+            <img src="#" data-win-bind="src: imageUrl" height="300" width="300" />
+            <dl>
+                <dt>Name</dt>
+                <dd data-win-bind="innerText: name"></dd>
+                <!--
+                <dt>Manufacturer</dt>
+                <dd data-win-bind="innerText: manufacturer"></dd>
+                <dt>Price</dt> -->
+                <dd><span>$</span><span data-win-bind="innerText: price"></span></dd>
+                <dt>Processor</dt>
+                <dd>
+                    <dl>
+                        <dt>Model</dt>
+                        <dd data-win-bind="innerText: processor.modelName"></dd>
+                        <dt>Frequency</dt>
+                        <dd data-win-bind="innerText: processor.frequencyGHz"></dd>
+                    </dl>
+                </dd>
+                <dt>Rating</dt>
+                <dd><div class="ratingControl" data-win-control="WinJS.UI.Rating" data-win-bind="winControl.userRating: rating"></div></dd>
+            </dl>
+        </div>
+    </div>
+
+    <div id="container"></div>
+</body>
+</html>

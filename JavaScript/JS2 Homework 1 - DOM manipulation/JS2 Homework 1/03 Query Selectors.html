@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Homework 1 - Task 3</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata input#param1 { width:40%; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript2 Homework 1 - Task 3</h1>
+        <h3>Creates Shims for querySelectorAll and querySelector JS functions for IE7</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result">
+        </div>
+     </div>
+    <script type="text/javascript">
+        if (!document.querySelectorAll) { // IE7 querySelector hack
+            document.querySelectorAll = function (selector) {
+                var head = document.documentElement.firstChild; // takes <head> tag
+                var styleTag = document.createElement("STYLE"); // creates a new <style> tag
+                head.appendChild(styleTag); 
+                document.arrayOfSelectorNodes = [];
+
+                // the next line is the magic - so called IE5-IE7 CSS expressions:
+                //    the expression is executed on each HTML element that fulfils the selector  
+                styleTag.styleSheet.cssText = selector + "{x:expression(document.arrayOfSelectorNodes.push(this))}";
+                // the next line forces DOM tree to reload and and CCS to execute 
+                window.scrollBy(1, 0);
+                // initially was implemented window.scrollBy(0, 0) but it seems to work only in Quirks mode or probably in "original" IE7
+                // this double invoke of scrollBy has side effect of doubling the result, however it works! 
+                head.removeChild(styleTag);
+                window.scrollBy(-1, 0);
+                return document.arrayOfSelectorNodes;
+            }
+        }
+
+        if (!document.querySelector) { // IE7 querySelector hack
+            document.querySelector = function (selector) {
+                return document.querySelectorAll(selector)[0];
+            }
+        }
+
+        function result() {
+            var container = document.getElementById('result'); // task container
+            var result = document.querySelectorAll('div#wrapper h1');
+            for (var i = 0; i < result.length; i++) {
+                container.innerHTML += i + ' - ' + result[i].innerText + '<br />';
+            }
+
+            var single = document.querySelector('div#wrapper h3');
+            container.innerHTML += 'single  - ' + single.innerText + '<br />';
+        }
+    </script>
+</body>
+</html>
+
+ 

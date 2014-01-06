@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 3 - Task 4</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 3 - Task 4</h1>
+        <h3>Prints lexicographically minimal and maximal properties of document, window and navigator objects</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+             <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var min = null;
+            var max = null;
+            for (var prop in document) { // iterates through properties of document object
+                if (min == null || prop < min) min = prop; // checks for minimal element
+                if (max == null || prop > max) max = prop; // checks for maximal element
+            }
+            var result = "Document Min Property: " + min + ", Document Max Property: " + max + "<br />"; // prepares a line of the result
+
+            min = null;
+            max = null;
+            for (var prop in window) { // iterates through properties of window object
+                if (min == null || prop < min) min = prop; // checks for minimal element
+                if (max == null || prop > max) max = prop; // checks for maximal element
+            }
+            result += "Window Min Property: " + min + ", Window Max Property: " + max + "<br />"; // prepares a line of the result
+
+            min = null;
+            max = null;
+            for (var prop in navigator) { // iterates through properties of navigator object
+                if (min == null || prop < min) min = prop; // checks for minimal element
+                if (max == null || prop > max) max = prop; // checks for maximal element
+            }
+            result += "Navigator Min Property: " + min + ", Navigator Max Property: " + max; // prepares a line of the result
+
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />"; // outputs the result
+        }
+    </script>
+</body>
+</html>
+
+ 

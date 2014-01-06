@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="TicTacToe.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TicTacToe"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="clr-namespace:TicTacToe.Commands"
+    xmlns:vm="clr-namespace:TicTacToe.ViewModels"
+    xmlns:m="clr-namespace:TicTacToe.Models"
+    xmlns:common="using:TicTacToe.Common"    
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="xMove">
+            <Image Source="ms-appx:///Assets/XMove.png" Stretch="None" />
+        </DataTemplate>
+        <DataTemplate x:Key="oMove">
+            <Image Source="ms-appx:///Assets/OMove.png" Stretch="None" />
+        </DataTemplate>
+        <common:MoveDataTemplateSelector  
+            x:Key="moveTemplateSelector" 
+            XMoveTemplate="{StaticResource xMove}" 
+            OMoveTemplate="{StaticResource oMove}" />
+    </Page.Resources>
+    <!--Page.DataContext>
+        <vm:MainViewModel />
+    </Page.DataContext-->
+
+    <!-- It looks that everithing should be fine, but it does not: it seems that even the below shown workaround of -->
+    <!-- Data Template binding in Windows RT does not work -->
+    <!-- Everything finished with "Catastrophic failure (Exception from HRESULT: 0x8000FFFF (E_UNEXPECTED))" !!!! Investigation continues..... -->
+    <!-- If you know why this code does not run, please advice - your comment will be highly appreciated -->
+    
+    <StackPanel Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <ItemsControl ItemsSource="{Binding Moves}" ItemTemplateSelector="{StaticResource moveTemplateSelector}">
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ItemsControl">
+                    <Setter Property="Grid.Row" Value="{Binding Path=Row}" />
+                    <Setter Property="Grid.Column" Value="{Binding Path=Column}" />
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </StackPanel>
+</Page>

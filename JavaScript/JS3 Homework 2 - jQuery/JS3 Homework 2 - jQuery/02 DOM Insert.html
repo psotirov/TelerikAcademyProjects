@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript3 Homework 2 - Task 2</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#result { position:relative; width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#initial { padding:50px; }
+        div.inserted { background-color: #f00; padding: 10px; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript3 Homework 2 - Task 2</h1>
+        <h3>DOM Inserting, based on jQuery</h3>
+        <div id="result">
+            <div id="initial">This is initial DOM element</div>
+        </div>
+    </div>
+    <script src="Scripts/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#initial').before($("<div/>").text("Inserted before").addClass("inserted"));
+            $('#initial').after($("<div/>").text("Inserted after").addClass("inserted"));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 4 - Task 6</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 4 - Task 6</h1>
+        <h3>Find most frequent element in an array, i.e. {4,1,1,4,2,3,4,4,1,2,4,9,3} -> 4 (5 times)</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">Array values (separated by ',')</label>
+            <input id="param1" type="text" />
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var arr = new Array();
+            arr = document.getElementById('param1').value.split(","); // takes an input agruments
+
+            // the simplest algorithm is to sort the array and after to count for each element how many times it was met inside.
+            arr.sort();
+
+            var number = arr[0]; //initial number is in the first array element and counts to 1; 
+            var count = 1;
+            var numberMax = arr[0];
+            var countMax = 1;
+
+            for (var i = 1; i < arr.length; i++)
+            {
+                if (arr[i] == number) count++; // counts each consecutive equal number
+                else { // otherwise
+                    if (count > countMax) { // saves the temporary most frequent number and count 
+                        numberMax = number;
+                        countMax = count;
+                    }
+                    number = arr[i]; // and resets the counter
+                    count = 1;
+                }
+            }
+
+        var result = "The most frequent number in array is " + numberMax + " and it was met " + countMax + " times."; // prepares the output for the array
+ 
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+    </script>
+</body>
+</html>
+
+ 

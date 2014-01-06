@@ -1,0 +1,51 @@
+﻿<Window x:Class="CountriesAndTownsListControls.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vms="clr-namespace:ViewModels;assembly=ViewModels"
+        Title="MainWindow" Height="500" Width="525">
+    <Window.DataContext>
+        <vms:CountriesAndTownsViewModel />
+    </Window.DataContext>
+    <StackPanel DataContext="{Binding Countries}">
+        <Label>Countries</Label>
+        <ListBox
+            Margin="10"
+            MaxHeight="75"            
+            ItemsSource="{Binding}" 
+            DisplayMemberPath="Name" 
+            SelectedValuePath="Name" 
+            IsSynchronizedWithCurrentItem="True" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Right">Country:</Label>
+            <TextBlock VerticalAlignment="Center" FontWeight="ExtraBlack" Text="{Binding Name}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Right" VerticalAlignment="Center">Country flag:</Label>
+            <Image Source="{Binding NationalFlag}" Width="80" Height="48"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Right">Language:</Label>
+            <TextBlock VerticalAlignment="Center" FontWeight="Black" Text="{Binding Language}"/>
+        </StackPanel>
+        <Border Margin="10" Padding="10" BorderBrush="Gray" BorderThickness="1">
+            <StackPanel DataContext="{Binding Towns}">
+                <Label HorizontalAlignment="Center">Country towns</Label>
+                <ListBox
+                    Margin="10"
+                    MaxHeight="75"
+                    ItemsSource="{Binding}" 
+                    DisplayMemberPath="Name" 
+                    SelectedValuePath="Name" 
+                    IsSynchronizedWithCurrentItem="True" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label HorizontalAlignment="Right">Town:</Label>
+                    <TextBlock VerticalAlignment="Center" FontWeight="ExtraBlack" Text="{Binding Name}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label HorizontalAlignment="Right">Population:</Label>
+                    <TextBlock VerticalAlignment="Center" FontWeight="Black" Text="{Binding Population}"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</Window>

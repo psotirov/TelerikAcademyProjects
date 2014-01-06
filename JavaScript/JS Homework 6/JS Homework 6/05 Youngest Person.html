@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 6 - Task 5</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata input#param1 { width:40%; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 6 - Task 5</h1>
+        <h3>Implements Function that finds the youngest person from following array of objects:</h3>
+        <h4 id="objects"></h4>
+        <div id="indata"> 
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        // Immeadiate start on document load
+        obj = [];
+        obj[0] = { firstName: "Pesho", lastName: "Peshov", age: 25 };
+        obj[1] = { firstName: "Gosho", lastName: "Goshov", age: 32 };
+        obj[2] = { firstName: "Tosho", lastName: "Toshov", age: 23 };
+        obj[3] = { firstName: "Tisho", lastName: "Tishov", age: 35 };
+        obj[4] = { firstName: "Lacho", lastName: "Lachov", age: 92 };
+        var data = "";
+        Object.prototype.Print = PrintObject; //adds function ToString as prototype of an Object
+        for (var i=0; i < obj.length; i++) {
+            data += obj[i].Print();
+        }
+        document.getElementById('objects').innerHTML = data;
+
+        function result() {
+            var yo = youngest();
+            var result = "The youngest person is " + yo.firstName + " " + yo.lastName;
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+
+        function youngest() {
+            var result = {};
+            var min = 0; // takes first age as youngest
+            for (var i=1; i < obj.length; i++) { // iterates through each object of global array "obj" 
+                if (obj[i].age < obj[min].age) min = i; // looks for a minimal age 
+            }
+
+            return obj[min];
+        }
+
+        function PrintObject() {
+            var result = "Object {";
+            for (var prop in this) { // iterates through each object property
+                if (prop != "Print") result += prop + ":" + this[prop] + "  "; // shows property:value pair 
+            }
+            result += "}<br />"
+            return result;
+        }
+
+    </script>
+</body>
+</html>
+
+ 

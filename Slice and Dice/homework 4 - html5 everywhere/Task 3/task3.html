@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SliceAndDice - HTML5 Everywhere - Task 3</title>
+	<link  rel="stylesheet" href="task3.css" />
+    <!-- Webshims required external scripts - jQuery and Modernizr -->
+    <script src="jquery-1.9.1.min.js"></script>
+    <script src="modernizr.custom.31993.js"></script>
+    <!-- Webshims Polyfiller load and activation -->
+    <script src="polyfiller.js"></script>
+    <script>$.webshims.polyfill();</script>    
+    <!-- Polyfill for color type (css and JS) from http://www.eyecon.ro/colorpicker/ -->
+    <link rel="stylesheet" href="colorpicker.css" />
+    <script src="colorpicker.js"></script>
+    <!-- Polyfill and UI for week and datetime type from https://github.com/jonstipe/ and http://jqueryui.com/ -->
+    <script src="week-polyfill.min.js"></script>    
+    <script src="datetime-polyfill.min.js"></script>    
+    <link rel="stylesheet" href="jquery.ui.all.css" />
+    <script src="jquery-ui.min.js"></script>        
+</head>
+<body>
+    <!-- A list of all required input fields -->
+	<div class="element"><span>Range:</span><input type="range" /></div> 
+	<div class="element"><span>Number:</span><input type="number" /></div>
+	<div class="element"><span>Email:</span><input type="email" pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" title="Email"/></div>
+	<div class="element"><span>Date:</span><input type="date" /></div>
+	<div class="element"><span>Color:</span><input type="color" /></div>
+	<div class="element"><span>Datetime:</span><input type="datetime" /></div>
+	<div class="element"><span>Month:</span><input type="month" /></div>
+	<div class="element"><span>Search:</span><input type="search" /></div>
+	<div class="element"><span>Phone:</span><input type="tel" pattern="(\+?([0-9]+))\b" title="+35929999999" id="phone"/></div>
+	<div class="element"><span>Week:</span><input type="week" /></div>
+	<div class="element"><span>Time:</span><input type="time" /></div>
+	<div class="element"><span>URL:</span><input type="url"/></div>
+   
+    <!-- COLORPICKER http://www.eyecon.ro/colorpicker/ -->
+    <script>
+        var initColorpicker = function () {
+            $('input[type=color]').each(function () {
+                var $input = $(this);
+                $input.ColorPicker({
+                    onSubmit: function (hsb, hex, rgb, el) {
+                        $(el).val(hex);
+                        $(el).ColorPickerHide();
+                    }
+                });
+            });
+        };
+        if (!Modernizr.inputtypes.color) {
+            $(document).ready(initColorpicker);
+        };
+    </script>
+    <!-- Makes pseudo classes :invalid and :valid to work in IE -->
+    <!--[if (lte IE 9)]> 
+    <script>
+        var inputs = document.getElementsByTagName("input");
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].attachEvent("onmouseover", invalidPseudoClassSupport);
+            inputs[i].attachEvent("onmouseout", invalidPseudoClassSupport);
+            inputs[i].attachEvent("onkeyup", invalidPseudoClassSupport);
+        }
+
+        function invalidPseudoClassSupport() {            
+            $("input:valid").removeClass("invalid");
+            $("input:invalid").addClass("invalid");
+        }
+        </script>
+     <![endif]--> 
+    </body>
+</html>

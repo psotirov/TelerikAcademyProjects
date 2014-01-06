@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 2 - Task 7</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            width: 100%;
+        }
+        h1, h3, h4 {
+            text-align:center;
+            margin:5px 0;
+            padding:0;
+        }
+        div#wrapper {
+            width:90%;
+            height:100%;
+            margin:0 auto;
+            background-color:#c2c6cc;
+        }
+        div#indata, div#result {
+            width: 90%;
+            border: 1px solid black;
+            padding: 5px;
+            margin:5px auto;
+            text-align:center;
+        }
+        div#indata * {
+            display:inline-block;
+            float:left;
+            margin:10px;
+        }
+        div#indata::after {
+            content: "";
+		    display: block;
+		    height: 0;
+		    overflow: hidden;
+		    clear:both;
+        }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 2 - Task 7</h1>
+        <h3>Finds the biggest in five numbers</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">First number</label>
+            <input id="param1" type="text" />
+            <label for="param2">Second number</label>
+            <input id="param2" type="text" />
+            <label for="param3">Third number</label>
+            <input id="param3" type="text" /><br /><br /><br />
+            <label for="param4">Fourth number</label>
+            <input id="param4" type="text" />
+            <label for="param5">Fifth number</label>
+            <input id="param5" type="text" />
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var param1 = parseFloat(document.getElementById('param1').value);
+            var param2 = parseFloat(document.getElementById('param2').value);
+            var param3 = parseFloat(document.getElementById('param3').value);
+            var param4 = parseFloat(document.getElementById('param4').value);
+            var param5 = parseFloat(document.getElementById('param5').value);
+            
+            // Assuming that param1 is biggest
+            if (param2 > param1) param1 = param2;
+            if (param3 > param1) param1 = param3;
+            if (param4 > param1) param1 = param4;
+            if (param5 > param1) param1 = param5;
+
+            var result = "The biggest number is " + param1;
+
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+    </script>
+</body>
+</html>
+
+ 

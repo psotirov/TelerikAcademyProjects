@@ -1,0 +1,33 @@
+body {
+	background: #eee;
+}
+input {
+	border: 1px solid #ccc;
+	height: 16px;
+	width: 50%;
+}
+.ui-widget-content {
+	border: none;
+	background: none;
+}
+.element {
+	width:100%;
+	border:1px solid #ccc;
+	padding: 10px;
+	margin-bottom:20px;
+	text-align: center;
+	position:relative;
+}
+.element span {
+	position:absolute;
+	left: 10px;
+}
+button, input[type=button] {
+	width: 50%;
+}
+input:invalid {
+	background-color: #fbd;
+}
+.invalid {
+	background-color: #fbd;
+}

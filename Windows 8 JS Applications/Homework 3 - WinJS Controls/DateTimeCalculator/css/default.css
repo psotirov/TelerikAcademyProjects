@@ -1,0 +1,48 @@
+﻿body {
+    text-align:center;
+    padding:10px;
+}
+
+.container {
+    /*width:30%;*/
+    display:inline-block;
+    padding:10px;
+    border:1px solid white;
+}
+
+#actions-container-id {
+    border:none;
+}
+
+#result {
+    width:90%;
+    margin-top:30px;
+    padding:20px;
+}
+
+.win-timepicker {
+    display:block;
+    margin-top:20px;
+}
+
+.win-toggleswitch {
+    display:inline-block;
+    margin-bottom:20px;
+}
+
+#calculate-button-id {
+    width:95%;
+}
+
+
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+}
+
+@media screen and (-ms-view-state: snapped) {
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+}

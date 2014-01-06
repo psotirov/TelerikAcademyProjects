@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Homework 1 - Task 1</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata input#param1 { width:40%; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+        div#result { height:500px; position:relative; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript2 Homework 1 - Task 1</h1>
+        <h3>Generates a number of random DIV elements with different position, width, height, border width, border and background and font color.</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">Number of DIVs</label>
+            <input id="param1" type="text" value="50"/>
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var countDivs = parseInt(document.getElementById('param1').value);
+
+            var container = document.getElementById('result'); // task container
+            var wrapper = document.createDocumentFragment(); // using temporary wrapper for better performance
+            for (var i = 0; i < countDivs; i++) {
+                // creates a div and sets its dimensions 
+                var aDiv = document.createElement('div');
+                aDiv.style.position = 'absolute';
+                var divWidth = parseInt(Math.random() * 81 + 20); // width and height between 20 and 100 inclusive
+                var divHeight = parseInt(Math.random() * 81 + 20);
+                aDiv.style.width = divWidth + 'px';
+                aDiv.style.height = divHeight + 'px';
+
+                //sets div content and colors
+                aDiv.style.backgroundColor = GenerateColor();
+                aDiv.style.color = GenerateColor();
+                aDiv.style.overflow = 'hidden'; // content only inside the div element
+                aDiv.innerHTML = "<strong>div</strong>";
+
+                // sets div border
+                var borderWidth = parseInt(Math.random() * 20 + 1); // width between 1 and 20 inclusive
+                aDiv.style.border = borderWidth + 'px solid ' + GenerateColor();
+                var maxBorderRadius = parseInt(Math.min(divHeight, divWidth) / 2); // border radius must be feasible
+                aDiv.style.borderRadius = parseInt(Math.random() * maxBorderRadius) + 'px'; // random border radius within range
+
+                // and finally its position but within the wrapping container (excluding self dimensions, border thickness and container paddings)
+                var posLeft = parseInt(Math.random() * (parseInt(container.clientWidth) - divWidth - 2 * borderWidth - 10) + 5);
+                var posTop = parseInt(Math.random() * (parseInt(container.clientHeight) - divHeight - 2 * borderWidth - 10) + 5);
+                aDiv.style.left = posLeft + 'px';
+                aDiv.style.top = posTop + 'px';
+
+                wrapper.appendChild(aDiv);
+            }
+
+            container.appendChild(wrapper);
+        }
+
+        function GenerateColor() {
+            var result = 'rgb(';
+            for (var i = 0; i < 3; i++) { // separate RGB values
+                if (i) result += ',';
+                result += parseInt(Math.random() * 256);
+            }
+
+            result += ')';
+            return result;
+        }
+    </script>
+</body>
+</html>
+
+ 

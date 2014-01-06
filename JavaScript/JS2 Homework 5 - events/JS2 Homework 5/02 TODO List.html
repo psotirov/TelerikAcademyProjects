@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Homework 5 - Task 2</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        #wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        #indata, #result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript2 Homework 5 - Task 2</h1>
+        <h3>Creates "TODO List" UI control</h3>
+        <h4>Please enter some TODO items</h4>
+        <div id="indata"> 
+           <form>
+               <input id="enter" type="text" name="item" value="Some TODO value"/>
+               <button id="add" type="submit">Add item</button>
+               <button id="remove">Remove item</button>
+               <button id="showHide">Show/Hide List</button>
+           </form>
+        </div> 
+        <h4>TODO list:</h4>
+        <div id="result">
+            <ul id="todo">
+            </ul>
+        </div>
+     </div>
+    <script type="text/javascript">
+        // Cross Browser event attaching sequence
+        function setEvent(element, event, handler, useCapture) {
+            if (!element || !event || !handler) {
+                return; // nothing to attach
+            }
+            useCapture = useCapture || false;
+            if (document.addEventListener) {
+                // Modern Browsers
+                element.addEventListener(event, handler, useCapture);
+            } else if (document.attachEvent) {
+                // IE6 - 8
+                element.attachEvent(event, handler);
+            } else {
+                // Really old browsers
+                element["on" + event] = handler;
+            }
+        }
+
+        // takes the result container
+        var container = document.getElementById("todo");
+
+        // attaches events to the buttons but only if container exists
+        if (container) {
+            setEvent(document.getElementById("add"), "click", addItem);
+            setEvent(document.getElementById("remove"), "click", removeItem);
+            setEvent(document.getElementById("showHide"), "click", showHideList);
+        }
+
+        function addItem(ev) {
+            // stop bubbling / capturing
+            ev = ev || window.event; // IE
+            ev.stopPropagation();
+            ev.preventDefault();
+
+            var listItem = document.createElement("li");
+            listItem.innerHTML = document.getElementById("enter").value;
+            container.appendChild(listItem);
+        }
+
+        function removeItem(ev) {
+            // stop bubbling / capturing
+            ev = ev || window.event; // IE
+            ev.stopPropagation();
+            ev.preventDefault();
+
+            var valueToRemove = document.getElementById("enter").value;
+            // removing all elements that contain the valueToRemove
+            var element = container.firstElementChild;
+            while (element) {
+                var curentElement = element;
+                element = element.nextElementSibling;
+                if (curentElement.innerText.search(valueToRemove) >= 0) {
+                    container.removeChild(curentElement);
+                }                
+            }
+        }
+
+        function showHideList(ev) {
+            // stop bubbling / capturing
+            ev = ev || window.event; // IE
+            ev.stopPropagation();
+            ev.preventDefault();
+
+            // all visible elements are made invisible, all invisible are made visible
+            if (container.style.display === "none") {
+                container.style.display = "";
+            } else {
+                container.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
+ 

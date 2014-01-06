@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript3 Homework 3</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#result { position:relative; width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; }
+        .treeView, .treeView ul { list-style-type:none; }
+        .treeView ul li { padding-left:50px; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript3 Homework 3</h1>
+        <h3>TreeView control, as jQuery plugin</h3>
+        <div id="result">
+            <ul class="treeView">
+                <li><a href="#">Top level Link 1</a></li>
+                <li><a href="#">Top level Link 2</a></li>
+                <li><a href="#">Top level Menu 3</a>
+                    <ul>
+                        <li><a href="#">Sub item Link 3.1</a></li>
+                        <li><a href="#">Sub item Link 3.2</a></li>
+                        <li><a href="#">Sub item Link 3.3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Top level Menu 4</a>
+                    <ul>
+                        <li><a href="#">Sub item Link 4.1</a></li>
+                        <li><a href="#">Sub item Menu 4.2</a>
+                            <ul>
+                                <li><a href="#">Sub Sub item Link 4.2.1</a></li>
+                                <li><a href="#">Sub Sub item Link 4.2.2</a></li>
+                                <li><a href="#">Sub Sub item Link 4.2.3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Sub item Menu 4.3</a>
+                            <ul>
+                                <li><a href="#">Sub Sub item Link 4.3.1</a></li>
+                                <li><a href="#">Sub Sub item Menu 4.3.2</a>
+                                    <ul>
+                                        <li><a href="#">Sub Sub Sub item Link 4.3.2.1</a></li>
+                                        <li><a href="#">Sub Sub Sub item Link 4.3.2.2</a></li>
+                                        <li><a href="#">Sub Sub Sub item Link 4.3.2.3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Sub Sub item Link 4.3.3</a></li>
+                                <li><a href="#">Sub Sub item Link 4.3.4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="Scripts/jquery-2.0.2.min.js"></script>
+    <script src="Scripts/TreeView.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $( '.treeView' ).treeView( { collapsed:true } ).hide().fadeIn(2000);
+        });
+    </script>
+</body>
+</html>

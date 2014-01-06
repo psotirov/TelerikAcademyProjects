@@ -1,0 +1,272 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Friends_Of_Pesho
+{
+    class Friends
+    {
+        static int countNodes;
+        static int countStreets;
+        static int countHospitals;
+
+        static Dictionary<int, Node> hospitals = new Dictionary<int,Node>();
+        static Dictionary<int, Node> nodes = new Dictionary<int, Node>();
+        static Dictionary<Node, List<Street>> map = new Dictionary<Node, List<Street>>();
+
+        static void Main()
+        {
+            GetInput();
+
+            ulong minDistance = ulong.MaxValue;
+            foreach (var hospital in hospitals)
+            {
+                Dijkstra.FindMinimalPaths(map, hospital.Value);
+                ulong totalDistance = GetTotalDistance();
+                if (totalDistance < minDistance)
+                {
+                    minDistance = totalDistance;
+                }
+            }
+
+            Console.WriteLine(minDistance);            
+        }
+
+        static void GetInput()
+        {
+            // first input line
+            string[] nodesData = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            countNodes = int.Parse(nodesData[0]);
+            countStreets = int.Parse(nodesData[1]);
+            countHospitals = int.Parse(nodesData[2]);
+
+            // second input line
+            string[] hospitalsData = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < countHospitals; i++)
+            {
+                int hospitalID = int.Parse(hospitalsData[i]);
+                hospitals.Add(hospitalID, new Node(hospitalID, true));
+            }
+
+            for (int i = 1; i <= countNodes; i++)
+            {
+                if (hospitals.ContainsKey(i))
+                {
+                    nodes.Add(i, hospitals[i]);
+                }
+                else
+                {
+                    nodes.Add(i, new Node(i));
+                }
+            }
+
+            // third to third + countStreets input lines - gets the map (connections between nodes)
+            for (int i = 0; i < countStreets; i++)
+            {
+                string[] streetData = Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                Node startNode = nodes[int.Parse(streetData[0])];
+                Node endNode = nodes[int.Parse(streetData[1])];
+                ulong distance = ulong.Parse(streetData[2]);
+
+                // connection between start node and end node
+                if (!map.ContainsKey(startNode))
+                {
+                    map.Add(startNode, new List<Street>());
+                }
+
+                map[startNode].Add(new Street(endNode, distance));
+
+                // connection between end node and start node
+                if (!map.ContainsKey(endNode))
+                {
+                    map.Add(endNode, new List<Street>());
+                }
+
+                map[endNode].Add(new Street(startNode, distance));
+            }
+        }
+
+        static ulong GetTotalDistance()
+        {
+            ulong distance = 0;
+
+            foreach (var node in nodes)
+            {
+                if (!node.Value.IsHospital)
+                {
+                    distance += node.Value.DijkstraDistance;
+                }
+            }
+
+            return distance;
+        }
+    }
+
+    public class PriorityQueue<T> : IEnumerable<T> where T : IComparable
+    {
+        private T[] elements;
+        public int Count { get; private set; }
+
+        public PriorityQueue()
+        {
+            this.elements = new T[4];
+            this.Count = 0;
+        }
+
+        public void Enqueue(T value)
+        {
+            if (this.elements.Length - this.Count == 1)
+            {
+                T[] doubleLength = new T[this.elements.Length * 2];
+                this.elements.CopyTo(doubleLength, 0);
+                this.elements = doubleLength;
+            }
+
+            this.elements[this.Count++] = value;
+
+            // swap the new element with its parent until the new element is smaller (move to the left/up)
+            int i = this.Count - 1;
+            while (i > 0 && this.elements[i].CompareTo(this.elements[this.ParentIndex(i)]) < 0)
+            {
+                this.Swap(i, this.ParentIndex(i));
+                i = this.ParentIndex(i);
+            }
+        }
+
+        public T Dequeue()
+        {
+            var result = this.Peek();
+
+            this.elements[0] = this.elements[--this.Count];
+
+            // swap the new first element (previously the last) with its smaller child until that first element is greater (move to the right/down)
+            int i = 0;
+            int smallerChildIndex = 1;
+            if (this.Count > 2 && this.elements[1].CompareTo(this.elements[2]) > 0)
+            {
+                smallerChildIndex = 2;
+            }
+
+            while (smallerChildIndex < this.Count && this.elements[i].CompareTo(this.elements[smallerChildIndex]) > 0)
+            {
+                this.Swap(i, smallerChildIndex);
+                i = smallerChildIndex;
+                smallerChildIndex = this.Child1Index(i);
+                if (this.Child2Index(i) < this.Count &&
+                    this.elements[this.Child1Index(i)].CompareTo(this.elements[this.Child2Index(i)]) > 0)
+                {
+                    smallerChildIndex = this.Child2Index(i);
+                }
+            }
+
+            return result;
+        }
+
+        public T Peek()
+        {
+            return this.elements[0];
+        }
+
+        private int ParentIndex(int i)
+        {
+            return (i - 1) / 2;
+        }
+
+        private int Child1Index(int i)
+        {
+            return (i * 2) + 1;
+        }
+
+        private int Child2Index(int i)
+        {
+            return (i * 2) + 2;
+        }
+
+        private void Swap(int i, int j)
+        {
+            T temp = this.elements[i];
+            this.elements[i] = this.elements[j];
+            this.elements[j] = temp;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < this.Count; i++)
+            {
+                yield return this.elements[i];
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
+    }
+
+	public class Node : IComparable
+    {
+        public int ID { get; private set; }
+        public bool IsHospital { get; set; }
+        public ulong DijkstraDistance { get; set; }
+
+        public Node(int id, bool isHospital = false)
+        {
+            this.ID = id;
+            this.IsHospital = isHospital;
+        }
+
+        public int CompareTo(object obj)
+        {
+            return this.DijkstraDistance.CompareTo((obj as Node).DijkstraDistance);
+        }
+    }
+
+	public class Street
+    {
+        public Node Node { get; set; }
+        public ulong Distance { get; set; }
+
+        public Street(Node node, ulong distance)
+        {
+            this.Node = node;
+            this.Distance = distance;
+        }
+    }
+
+    public class Dijkstra
+    {
+        public static void FindMinimalPaths(Dictionary<Node, List<Street>> graph, Node source)
+        {
+            PriorityQueue<Node> queue = new PriorityQueue<Node>();
+
+            foreach (var node in graph)
+            {
+                if (source.ID != node.Key.ID)
+                {
+                    node.Key.DijkstraDistance = ulong.MaxValue;
+                }
+            }
+
+            source.DijkstraDistance = 0;
+            queue.Enqueue(source);
+
+            while (queue.Count != 0)
+            {
+                Node currentNode = queue.Dequeue();
+
+                foreach (var neighbour in graph[currentNode])
+                {
+                    ulong potDistance = currentNode.DijkstraDistance + neighbour.Distance;
+
+                    if (potDistance < neighbour.Node.DijkstraDistance)
+                    {
+                        neighbour.Node.DijkstraDistance = potDistance;
+                        // adds only modified elements in the queue
+                        // thus reordering the queue after each iteration is avoided
+                        queue.Enqueue(neighbour.Node);
+                    }
+                }
+            }
+        }
+    }
+}

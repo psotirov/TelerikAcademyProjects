@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Homework 2 - Task 1</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript2 Homework 2 - Task 1</h1>
+        <h3>Creates a module that works with DOM tree</h3>
+        <h4>Please start the example</h4>
+        <div id="indata"> 
+            <button id="run" onclick="testModule()">Run Example!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        var domModule = function () {
+            var MAX_BUFFER_LENGTH = 100;
+            var parentsBuffer = [];
+
+            function addChild(child, parent) {
+                if (!child || !parent) { // both child and parent should be objects
+                    return;
+                }
+
+                var target = document.querySelector(parent); // selects first node that fulfills parent selector
+                if (target) {
+                    target.appendChild(child); // adds child node element to it
+                }
+            }
+
+            function deleteChild(parent, child) {
+                if (!child || !parent) { // both child and parent should be objects
+                    return;
+                }
+
+                var target = document.querySelector(parent); // selects first node that fulfills parent selector
+                if (target) {
+                    var targetChild = target.querySelector(child);
+                    if (targetChild) { // if the parent has such child element
+                        target.removeChild(targetChild); // removes requested child node element
+                        return true; // operation is successfull
+                    }
+                }
+
+                return false; // operation failed - no such parent element
+            }
+
+            function addHandler(element, event, action) {
+                if (!element || !event) { // both element and event should be objects
+                    return;
+                }
+
+                var target = document.querySelector(element); // selects first node that fulfills elementselector
+                if (target) { // adds event to a valid object
+                    if (target.addEventListener) {
+                        target.addEventListener(event, action, false); // all modern browsers
+                    } else if (target.attachEvent) {
+                        target.attachEvent(event, action); // IE < 9
+                    }
+                }
+            }
+
+            function addBufferedChild(parent, child) {
+                if (!child || !parent) { // both child and parent should be objects
+                    return;
+                }
+
+                if (!parentsBuffer[parent]) { // checks if this is parent selector's first use
+                    parentsBuffer[parent] = document.createDocumentFragment(); // then creates a nodes' holder 
+                }
+
+                parentsBuffer[parent].appendChild(child);
+                if (parentsBuffer[parent].childNodes.length >= MAX_BUFFER_LENGTH) { // if this parent's buffer is full flush it to the DOM 
+                    addChild(parentsBuffer[parent], parent);
+                    parentsBuffer[parent] = null; // empties the buffer for this parent element
+                }
+            }
+
+            return {
+                appendChild: addChild,
+                removeChild: deleteChild,
+                addHandler: addHandler,
+                appendToBuffer: addBufferedChild
+            }
+        }();
+
+        function testModule() {
+            // clears result's content if any
+            document.getElementById("result").innerHTML = "";
+
+            // appends new div element to the result div
+            var newNode = document.createElement('div');
+            newNode.style.border = "2px solid red";
+            newNode.style.color = "red";
+            newNode.style.padding = "10px";
+            newNode.style.marginBottom = "10px";
+            newNode.innerHTML = "domModule.appendChild invoked";
+            domModule.appendChild(newNode, "#result");
+
+            // appends new div element to the result div
+            var eventNode = document.createElement('div');
+            eventNode.style.border = "2px solid green";
+            eventNode.style.color = "green";
+            eventNode.style.padding = "10px";
+            eventNode.id = "testNode";
+            eventNode.innerHTML = "Event OnClick is attached using domModule.addHandler</br>Plese click inside to add/remove 100 child elements using domModule.appendToBuffer method</br>";
+            domModule.appendChild(eventNode, "#result");
+            domModule.addHandler("#testNode", "click", dealWithInnerElements);
+        }
+
+        function dealWithInnerElements() {
+            if (this.childNodes.length > 100) { // we have 100 elements already then it removes them
+                while (domModule.removeChild("#testNode", "span")) {
+                }
+
+            } else {
+                for (var i = 0; i < 100; i++) { // generates 100 span elements
+                    var newNode = document.createElement('span');
+                    newNode.style.color = "black";
+                    newNode.innerHTML = '<' + i + '> ';
+                    domModule.appendToBuffer("#testNode", newNode);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
+ 

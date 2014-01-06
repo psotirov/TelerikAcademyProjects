@@ -1,0 +1,37 @@
+﻿body > div {
+    border:1px solid white;
+    width:45%;
+    height:42%;
+    margin:10px;
+    padding:10px;
+    float:left;
+    overflow:hidden;
+}
+
+#playlist-container {
+    height: 90%;
+}
+
+#video-frame {
+    width:100%;
+    height: 100%;
+    border:2px inset red;
+}
+
+#controls-container div {
+    width:100%;
+    padding:20px;
+    text-align:center;
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+}
+
+@media screen and (-ms-view-state: snapped) {
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+}

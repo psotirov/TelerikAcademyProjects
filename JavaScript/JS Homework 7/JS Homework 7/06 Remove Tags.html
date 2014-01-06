@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 7 - Task 6</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 7 - Task 6</h1>
+        <h3>Extracts the text from a given HTML code</h3>
+        <h4>The text is:</h4>
+        <p id="text">&lt;html&gt;&lt;head&gt;&lt;title&gt;Lorem Ipsum &lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;section&gt;&lt;p&gt;It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. &lt;/p&gt;&lt;p&gt;Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia...&lt;/p&gt;&lt;/section&gt;&lt;/body&gt;&lt;/html&gt;</p>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            document.getElementById('result').innerHTML = "<br />" + removeTags() + "<br /><br />"; // outputs the result
+        }
+
+        function removeTags() {
+            var text = document.getElementById("text").innerText; // gets the text to look inside
+            var result = ""; // initially the result is empty
+            var tag = ""; // initially the current tag is empty
+            for (var i = 0; i < text.length; i++) {
+                if (text[i] == '<' || tag.length > 0) { // puts the next sequence of characters in the tag rather than in result (we have a tag)
+                    tag += text[i];
+                    if (text[i] == '>') { // closing tag character
+                        tag = ""; // empties the tag holder since it was proceeded
+                    }
+                }
+                else { // the character is outside the tag name, proceeds and adds it to the result
+                    result += text[i];; //puts the character into the result
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
+
+ 
+ 

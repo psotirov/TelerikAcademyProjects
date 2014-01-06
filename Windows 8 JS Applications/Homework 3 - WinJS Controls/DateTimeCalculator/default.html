@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DateTimeCalculator</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- DateTimeCalculator references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+</head>
+<body>
+    <div id="ui">
+        <div class="container">
+            <h4>Start Date</h4>
+            <div id="start-date-id" data-win-control="WinJS.UI.DatePicker" data-win-options="{calendar:'GregorianCalendar'}"></div>
+            <div id="start-time-id" data-win-control="WinJS.UI.TimePicker" data-win-options="{ disabled:'true', current:'0:00', clock:'24HourClock'}"></div>
+        </div>
+        <div class="container">
+            <h4>End Date</h4>
+            <div id="end-date-id" data-win-control="WinJS.UI.DatePicker" data-win-options="{calendar:'GregorianCalendar'}"></div>
+            <div id="end-time-id" data-win-control="WinJS.UI.TimePicker" data-win-options="{ disabled:'true', current:'0:00', clock:'24HourClock'}"></div>
+        </div>
+        <div id="actions-container-id" class="container">
+            <div id="time-select-switch-id" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title:'Calculating Time', labelOn:'Included', labelOff:'Excluded'}"></div>
+            <button id="calculate-button-id">Calculate time span</button>
+            <div id="calculate-menu-id" data-win-control="WinJS.UI.Menu" data-win-options="{anchor:'calculate-button-id'}">
+                <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'days-menu-button-id',label:'By days'}"></button>
+                <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'hours-menu-button-id',label:'By hours'}"></button>
+                <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'days-hours-menu-button-id',label:'By days and hours'}"></button>
+            </div>
+        </div>
+    </div>
+    <div id="result" class="container">No result yet</div>
+</body>
+</html>

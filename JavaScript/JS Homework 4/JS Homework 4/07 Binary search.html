@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 4 - Task 7</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 4 - Task 7</h1>
+        <h3>Sorts the array and performs a binary search for a value</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">Array values (separated by ',')</label>
+            <input id="param1" type="text" />
+            <label for="param2">Search value</label>
+            <input id="param2" type="text" />
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            arr = new Array(); // global array
+            arr = document.getElementById('param1').value.split(","); // takes an input agruments
+            var searchValue = document.getElementById('param2').value; 
+            
+            // first sorts the array
+            arr.sort(function (a, b) { return a - b });
+            var result = "The sorted array is { "+arr.join(", ")+" } <br />"
+
+            // calls the BinarySearch Method (see below)
+            var pos = BinSearch(searchValue, 0, arr.length-1);
+
+            if (pos < 0) result += "There is no such element!";// there is no solution
+            else result += "The element is found - Array[" + pos + "] = "+ arr[pos];// there is solution
+
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+
+        function BinSearch(val, start, end) {
+            var mid = Math.floor((start + end) / 2); // calculates the middle element of the array
+            if (val == arr[mid]) return mid; // if the element is found return its index
+            if (start == end) return (-1); // otherwise if the array is one element return "not found" message (-1) 
+            if (Math.floor(val) < Math.floor(arr[mid])) end = mid - 1; // if the search value is less than middle element search the left half of the array
+            else start = mid + 1; // otherwise the right half
+            return BinSearch(val, start, end); // invokes recursive call with updated parameters
+        }
+    </script>
+</body>
+</html>
+
+ 

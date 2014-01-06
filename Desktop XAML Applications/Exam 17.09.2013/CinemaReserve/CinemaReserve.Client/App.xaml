@@ -1,0 +1,9 @@
+﻿<Application x:Class="CinemaReserve.Client.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:myconverter="clr-namespace:CinemaReserve.Client.Converters"              
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <myconverter:BoolToVisibilityConverter x:Key="visibleConverter" />
+    </Application.Resources>
+</Application>

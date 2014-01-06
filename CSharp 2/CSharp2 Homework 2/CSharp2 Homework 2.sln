@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 Fill Matrices", "01 Fill Matrices\01 Fill Matrices.csproj", "{45C36EC8-A388-4C86-8FC3-7AC4BF8313D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02 Submatirx Max Sum", "02 Submatirx Max Sum\02 Submatirx Max Sum.csproj", "{06B52692-2586-4789-9F83-107F6B8E37A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04 Binary Search Nearest Number", "04 Binary Search Nearest Number\04 Binary Search Nearest Number.csproj", "{881F698A-9B3A-43E0-B476-2AB185B9F322}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 Sort String Array By Length", "05 Sort String Array By Length\05 Sort String Array By Length.csproj", "{EF9D2DED-B12E-4819-8079-7CDCACD1CF43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06 Matrix class", "06 Matrix class\06 Matrix class.csproj", "{F578B63A-FBD2-4BB3-AB5D-74A7650CA022}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07 Largest Area Of Equal Numbers", "07 Largest Area Of Equal Numbers\07 Largest Area Of Equal Numbers.csproj", "{AF861711-495B-4292-A37A-22AEAE13303A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03 Equal Strings Sequence In Matrix", "03 Equal Strings Sequence In Matrix\03 Equal Strings Sequence In Matrix.csproj", "{743917E3-CAF6-4A16-8D42-95CC2ABE6719}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45C36EC8-A388-4C86-8FC3-7AC4BF8313D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C36EC8-A388-4C86-8FC3-7AC4BF8313D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C36EC8-A388-4C86-8FC3-7AC4BF8313D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C36EC8-A388-4C86-8FC3-7AC4BF8313D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06B52692-2586-4789-9F83-107F6B8E37A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B52692-2586-4789-9F83-107F6B8E37A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B52692-2586-4789-9F83-107F6B8E37A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B52692-2586-4789-9F83-107F6B8E37A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{881F698A-9B3A-43E0-B476-2AB185B9F322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{881F698A-9B3A-43E0-B476-2AB185B9F322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{881F698A-9B3A-43E0-B476-2AB185B9F322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{881F698A-9B3A-43E0-B476-2AB185B9F322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF9D2DED-B12E-4819-8079-7CDCACD1CF43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9D2DED-B12E-4819-8079-7CDCACD1CF43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9D2DED-B12E-4819-8079-7CDCACD1CF43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9D2DED-B12E-4819-8079-7CDCACD1CF43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F578B63A-FBD2-4BB3-AB5D-74A7650CA022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F578B63A-FBD2-4BB3-AB5D-74A7650CA022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F578B63A-FBD2-4BB3-AB5D-74A7650CA022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F578B63A-FBD2-4BB3-AB5D-74A7650CA022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF861711-495B-4292-A37A-22AEAE13303A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF861711-495B-4292-A37A-22AEAE13303A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF861711-495B-4292-A37A-22AEAE13303A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF861711-495B-4292-A37A-22AEAE13303A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{743917E3-CAF6-4A16-8D42-95CC2ABE6719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{743917E3-CAF6-4A16-8D42-95CC2ABE6719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{743917E3-CAF6-4A16-8D42-95CC2ABE6719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{743917E3-CAF6-4A16-8D42-95CC2ABE6719}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

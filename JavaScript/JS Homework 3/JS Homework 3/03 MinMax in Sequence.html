@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 3 - Task 3</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 3 - Task 3</h1>
+        <h3>Prints minimal and maximal numbers of a sequence numbers</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">Sequence (separated by ',')</label>
+            <input id="param1" type="text" />
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var params = new Array();
+            params = document.getElementById('param1').value.split(","); // takes an input agruments
+            var min = params[0];
+            var max = params[0];
+            for (var i in params) { // iterates through each value
+                if (parseFloat(params[i]) < min) min = parseFloat(params[i]); // checks for minimal element
+                if (parseFloat(params[i]) > max) max = parseFloat(params[i]); // checks for maximal element
+            }
+            var result = "Min Number: " + min + ", Max Number: " + max; // prepares the result
+
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />"; // outputs the result
+        }
+    </script>
+</body>
+</html>
+
+ 

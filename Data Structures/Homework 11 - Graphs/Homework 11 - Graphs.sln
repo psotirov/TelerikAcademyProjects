@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Friends Of Pesho", "Friends Of Pesho\Friends Of Pesho.csproj", "{05608AA4-EFE8-4A4B-AFCC-CF4689E9F076}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salaries", "Salaries\Salaries.csproj", "{F7AA147D-5F12-44CD-BEB6-0DB26F56B724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TV Cables", "TV Cables\TV Cables.csproj", "{50E5A770-6211-40C4-BDE1-A82E27FC0A4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05608AA4-EFE8-4A4B-AFCC-CF4689E9F076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05608AA4-EFE8-4A4B-AFCC-CF4689E9F076}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05608AA4-EFE8-4A4B-AFCC-CF4689E9F076}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05608AA4-EFE8-4A4B-AFCC-CF4689E9F076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7AA147D-5F12-44CD-BEB6-0DB26F56B724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7AA147D-5F12-44CD-BEB6-0DB26F56B724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7AA147D-5F12-44CD-BEB6-0DB26F56B724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7AA147D-5F12-44CD-BEB6-0DB26F56B724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E5A770-6211-40C4-BDE1-A82E27FC0A4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E5A770-6211-40C4-BDE1-A82E27FC0A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E5A770-6211-40C4-BDE1-A82E27FC0A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E5A770-6211-40C4-BDE1-A82E27FC0A4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

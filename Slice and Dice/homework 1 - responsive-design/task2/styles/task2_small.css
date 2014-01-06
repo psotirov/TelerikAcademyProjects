@@ -1,0 +1,76 @@
+body #wrapper>aside div,body #wrapper footer {
+	padding:4%;
+	width:90%;
+}
+@media only screen and (max-width:1600px) {
+	body #wrapper{
+		width: 1024px;
+	}
+}
+@media only screen and (max-width:1024px) {
+	body #wrapper{
+		width: 960px;
+	}
+}
+@media only screen and (max-width:960px) {
+	body #wrapper{
+		width: 780px;
+	}
+}
+@media only screen and (max-width:780px) {
+	body #wrapper{
+		width: 640px;
+		font-size: 14px;
+	}
+}
+@media only screen and (max-width:640px) {
+	body #wrapper{
+		width: 100%;
+		font-size: 14px;
+	}
+	body #wrapper>header nav ul li {
+		margin-left:1px;
+	}
+	body #wrapper>header nav ul li a {
+	padding: 5px 10px;
+	}
+}
+@media only screen and (max-width:480px) {
+	body #wrapper{
+		width: 95%;
+		font-size: 12px;
+	}
+	body #wrapper aside .news, body #wrapper aside .social span {
+		display:none;
+	}
+	body #wrapper > header nav, body #wrapper aside {
+		float:none;
+		width:100%;	
+	}
+	body #wrapper aside .social ul li {
+		display: inline-block;
+		width:19%;
+		text-align:center;
+	}	
+	body #wrapper>header nav ul li  {
+		display:block;
+		text-align:center;
+	}
+	body #wrapper>header nav ul li ul{
+		position: static;
+		margin:2% 10%;
+	}
+	body #wrapper>header nav ul li ul li {
+		width:100%;
+		text-align:center;
+	}
+	body #wrapper section {
+		width: 95%;
+	}
+}
+@media only screen and (max-width:320px) {
+	body #wrapper{
+		width: 310px;
+		font-size: 10px;
+	}
+}

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01 Nested Loops", "01 Nested Loops\01 Nested Loops.csproj", "{F8647A2C-C536-4C00-B55D-36A9FC13CAEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02to04 Combinatorics", "02 Duplicated Combinations\02to04 Combinatorics.csproj", "{1F8BA676-3253-4566-A1A0-F5705510D22A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05to06 Variations", "05 Variations\05to06 Variations.csproj", "{03419192-15EA-42CC-97DE-E09BEC91EA11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07to09 Paths In Labyrinth", "07 Paths In Labyrinth\07to09 Paths In Labyrinth.csproj", "{E7C0D724-B779-489F-8BFA-5399FDB5594B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8647A2C-C536-4C00-B55D-36A9FC13CAEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8647A2C-C536-4C00-B55D-36A9FC13CAEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8647A2C-C536-4C00-B55D-36A9FC13CAEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8647A2C-C536-4C00-B55D-36A9FC13CAEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8BA676-3253-4566-A1A0-F5705510D22A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8BA676-3253-4566-A1A0-F5705510D22A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8BA676-3253-4566-A1A0-F5705510D22A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8BA676-3253-4566-A1A0-F5705510D22A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03419192-15EA-42CC-97DE-E09BEC91EA11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03419192-15EA-42CC-97DE-E09BEC91EA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03419192-15EA-42CC-97DE-E09BEC91EA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03419192-15EA-42CC-97DE-E09BEC91EA11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7C0D724-B779-489F-8BFA-5399FDB5594B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7C0D724-B779-489F-8BFA-5399FDB5594B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7C0D724-B779-489F-8BFA-5399FDB5594B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C0D724-B779-489F-8BFA-5399FDB5594B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 4 - Task 4</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 4 - Task 4</h1>
+        <h3>Finds the maximal increasing sequence of numbers, i.e. {3,2,3,4,2,2,4}->{2,3,4}</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">Array values (separated by ',')</label>
+            <input id="param1" type="text" />
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var arr = new Array();
+            arr = document.getElementById('param1').value.split(","); // takes an input agruments
+
+            var countMax = 1;
+            var number = arr[0];
+            var count = 1;
+            var posMax = 0;
+            var pos = 0;
+
+            for (var i = 1; i < arr.length; i++) {
+                if ((arr[i] - number) == 1) {// if the difference with previous element is 1 - we have increasing sequence
+                    count++; // counts it
+                    number = arr[i]; // puts the element as previous
+                }
+                else {// if the sequence has been broken
+                    number = arr[i]; // and resets the current sequence
+                    count = 1;
+                    pos = i;
+                }
+                if (count > countMax) {// checks if current sequence is greatest to the moment
+                    countMax = count; // saves its count and starting position
+                    posMax = pos;
+                }
+            }
+
+            var result = "The maximum sequence of equals- position: " + posMax + ", length: " + countMax +
+                         " = {" + arr.slice(posMax, posMax + countMax).join(", ") + "}"; // prepares the output for the first array
+ 
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+    </script>
+</body>
+</html>
+
+ 

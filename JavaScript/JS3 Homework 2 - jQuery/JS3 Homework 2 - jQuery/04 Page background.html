@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript3 Homework 2 - Task 4</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="colorpicker/css/colorpicker.css" type="text/css" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#result { position:relative; width: 90%; border: 1px solid black; padding: 100px 0; margin:5px auto; text-align:center; }
+        .arrow { text-decoration:none; display:block; width:50px; height:20px; background-color:#6d6; color:#000; font-weight:bold; margin:10px; position:absolute; top:0 }
+        #left { left:0; }
+        #right { right:0 }
+        div#container { margin: 0 50px; }
+        div.hidden { display: none; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript3 Homework 2 - Task 4</h1>
+        <h3>Selects background color of the page</h3>
+        <div id="result">
+            <button id="colorSelector">Change background color</button>
+        </div>
+    </div>
+    <script src="Scripts/jquery-2.0.2.min.js"></script>
+    <script src="colorpicker/js/colorpicker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#colorSelector').ColorPicker({
+                color: '#0000ff',
+                onShow: function (colpkr) {
+                    $(colpkr).fadeIn(500);
+                    return false;
+                },
+                onHide: function (colpkr) {
+                    $(colpkr).fadeOut(500);
+                    return false;
+                },
+                onChange: function (hsb, hex, rgb) {
+                    $('body').css('backgroundColor', '#' + hex);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

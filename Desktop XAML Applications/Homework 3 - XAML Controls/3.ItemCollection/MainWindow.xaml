@@ -1,0 +1,21 @@
+﻿<Window x:Class="_3.ItemCollection.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <TextBlock Margin="20" Name="tbResult">No item selected</TextBlock>
+        <GroupBox Padding="20" Header="Group of selection items">
+            <StackPanel>
+                <RadioButton GroupName="Items" Checked="RadioButton_Checked">Item 1</RadioButton>
+                <RadioButton GroupName="Items" Checked="RadioButton_Checked">Item 2</RadioButton>
+                <RadioButton GroupName="Items" Checked="RadioButton_Checked">Item 3</RadioButton>
+                <RadioButton GroupName="Items" Checked="RadioButton_Checked">Item 4</RadioButton>
+                <RadioButton GroupName="Items" Checked="RadioButton_Checked">Item 5</RadioButton>
+                <RadioButton GroupName="Items" Checked="RadioButton_Checked">Item 6</RadioButton>
+                <RadioButton GroupName="Items" Checked="RadioButton_Checked">Item 7</RadioButton>
+                <RadioButton GroupName="Items" Checked="RadioButton_Checked">Item 8</RadioButton>
+                <RadioButton GroupName="Items" Checked="RadioButton_Checked">Item 9</RadioButton>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</Window>

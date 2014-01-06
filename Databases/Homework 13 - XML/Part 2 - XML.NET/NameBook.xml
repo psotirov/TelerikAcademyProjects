@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<namebook>
+  <person>
+    <name>Pesho Peshov 1</name>
+    <address>Sofia, 1, Temenuga str.</address>
+    <phone>+359888777661</phone>
+  </person>
+  <person>
+    <name>Pesho Peshov 2</name>
+    <address>Sofia, 2, Temenuga str.</address>
+    <phone>+359888777662</phone>
+  </person>
+  <person>
+    <name>Pesho Peshov 3</name>
+    <address>Sofia, 3, Temenuga str.</address>
+    <phone>+359888777663</phone>
+  </person>
+  <person>
+    <name>Pesho Peshov 4</name>
+    <address>Sofia, 4, Temenuga str.</address>
+    <phone>359888777664</phone>
+  </person>
+  <person>
+    <name>Pesho Peshov 5</name>
+    <address>Sofia, 5, Temenuga str.</address>
+    <phone>+359888777665</phone>
+  </person>
+</namebook>

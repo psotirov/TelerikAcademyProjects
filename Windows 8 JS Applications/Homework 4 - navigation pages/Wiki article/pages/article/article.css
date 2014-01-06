@@ -1,0 +1,19 @@
+﻿.article section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+    overflow:auto;
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .article section[role=main] {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .article section[role=main] {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}

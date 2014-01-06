@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Homework 4 - Task 4</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        #result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript2 Homework 4 - Task 4</h1>
+        <h3>Drawing canvas</h3>
+        <div id="result"><canvas width="800" height="500">Canvas not supported</canvas></div>
+     </div>
+    <script type="text/javascript">
+        // set 2d context, colors and line width
+        var ctx = document.getElementsByTagName("canvas")[0].getContext("2d");
+        ctx.fillStyle = "rgb(144,202,215)";
+        ctx.strokeStyle = "rgb(51,125,143)";
+        ctx.lineWidth = 5;
+
+        //first tyre
+        ctx.beginPath();
+        ctx.arc(191, 340, 90, 0, 2 * Math.PI, false);
+        ctx.fill();
+        ctx.stroke();
+
+        //second tyre
+        ctx.beginPath();
+        ctx.arc(540, 340, 90, 0, 2 * Math.PI, false);
+        ctx.fill();
+        ctx.stroke();
+
+        //third circle
+        ctx.beginPath();
+        ctx.arc(350, 340, 25, 0, 2 * Math.PI, false);
+        ctx.stroke();
+
+        // two lines near the third circle
+        ctx.moveTo(330, 320);
+        ctx.lineTo(310, 300);
+        ctx.moveTo(370, 360);
+        ctx.lineTo(390, 380);
+        ctx.stroke();
+
+        //front stick
+        ctx.moveTo(540, 340);
+        ctx.lineTo(510, 110);
+        ctx.lineTo(580, 50);
+        ctx.moveTo(510, 110);
+        ctx.lineTo(420, 130);
+        ctx.stroke();
+
+        // start from third to first circle line
+        // four lines forming four sided figure (trapezoid?) and rear stick
+        ctx.moveTo(350, 340);
+        ctx.lineTo(191, 340);
+        ctx.lineTo(305, 210);
+        ctx.lineTo(520, 210);
+        ctx.lineTo(350, 340);
+        ctx.lineTo(275, 150);
+        ctx.moveTo(315, 150);
+        ctx.lineTo(235, 150);
+        ctx.stroke();
+   </script>
+</body>
+</html>
+
+ 

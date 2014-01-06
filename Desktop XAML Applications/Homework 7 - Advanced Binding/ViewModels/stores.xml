@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stores>
+  <store>
+    <name>Handy</name>
+    <phones>
+      <phone>
+        <vendor>Apple</vendor>
+        <model>Iphone 5</model>
+        <image>..\..\..\ViewModels\Images\apple-iphone-5.jpeg</image>
+        <year>2012</year>
+        <os>
+          <name>iOS</name>
+          <version>6</version>
+          <manufacturer>Apple</manufacturer>
+        </os>
+        <features>
+          <feature>
+            <name>Display type</name>
+            <value>LED-backlit IPS LCD</value>
+          </feature>
+          <feature>
+            <name>Display resolution</name>
+            <value>640 x 1136 pixels</value>
+          </feature>
+          <feature>
+            <name>Screen protection</name>
+            <value>Corning Gorilla Glass</value>
+          </feature>
+          <feature>
+            <name>Processor</name>
+            <value>Apple A6 Dual-core 1.3 GHz</value>
+          </feature>
+        </features>
+      </phone>
+      <phone>
+        <vendor>HTC</vendor>
+        <model>8X</model>
+        <image>..\..\..\ViewModels\Images\htc-8x.jpg</image>
+        <year>2012</year>
+        <os>
+          <name>Windows Phone</name>
+          <version>8</version>
+          <manufacturer>Microsoft</manufacturer>
+        </os>
+        <features>
+          <feature>
+            <name>Display type</name>
+            <value>S-LCD2</value>
+          </feature>
+          <feature>
+            <name>Display resolution</name>
+            <value>720 x 1280 pixels</value>
+          </feature>
+          <feature>
+            <name>Screen protection</name>
+            <value>Corning Gorilla Glass 2</value>
+          </feature>
+          <feature>
+            <name>Processor</name>
+            <value>Qualcomm MSM8960 Snapdragon Dual-core 1.5 GHz Krait</value>
+          </feature>
+        </features>
+      </phone>
+      <phone>
+        <vendor>Samsung</vendor>
+        <model>Galaxy S4</model>
+        <image>..\..\..\ViewModels\Images\samsung-s4.jpg</image>
+        <year>2013</year>
+        <os>
+          <name>Android OS</name>
+          <version>v4.2.2 (Jelly Bean)</version>
+          <manufacturer>Google</manufacturer>
+        </os>
+        <features>
+          <feature>
+            <name>Display type</name>
+            <value>Super AMOLED</value>
+          </feature>
+          <feature>
+            <name>Display resolution</name>
+            <value>1080 x 1920 pixels</value>
+          </feature>
+          <feature>
+            <name>Screen protection</name>
+            <value>Corning Gorilla Glass 3</value>
+          </feature>
+          <feature>
+            <name>Processor</name>
+            <value>Exynos 5 Octa 5410 Quad-core 1.6 GHz Cortex-A15, quad-core 1.2 GHz Cortex-A7</value>
+          </feature>
+        </features>
+      </phone>
+    </phones>
+  </store>
+  <store>
+    <name>Jeff</name>
+    <phones>
+      <phone>
+        <vendor>HTC</vendor>
+        <model>8X</model>
+        <image>..\..\..\ViewModels\Images\htc-8x.jpg</image>
+        <year>2012</year>
+        <os>
+          <name>Windows Phone</name>
+          <version>8</version>
+          <manufacturer>Microsoft</manufacturer>
+        </os>
+        <features>
+          <feature>
+            <name>Display type</name>
+            <value>S-LCD2</value>
+          </feature>
+          <feature>
+            <name>Display resolution</name>
+            <value>720 x 1280 pixels</value>
+          </feature>
+          <feature>
+            <name>Screen protection</name>
+            <value>Corning Gorilla Glass 2</value>
+          </feature>
+          <feature>
+            <name>Processor</name>
+            <value>Qualcomm MSM8960 Snapdragon Dual-core 1.5 GHz Krait</value>
+          </feature>
+        </features>
+      </phone>
+      <phone>
+        <vendor>Samsung</vendor>
+        <model>Galaxy S4</model>
+        <image>..\..\..\ViewModels\Images\samsung-s4.jpg</image>
+        <year>2013</year>
+        <os>
+          <name>Android OS</name>
+          <version>v4.2.2 (Jelly Bean)</version>
+          <manufacturer>Google</manufacturer>
+        </os>
+        <features>
+          <feature>
+            <name>Display type</name>
+            <value>Super AMOLED</value>
+          </feature>
+          <feature>
+            <name>Display resolution</name>
+            <value>1080 x 1920 pixels</value>
+          </feature>
+          <feature>
+            <name>Screen protection</name>
+            <value>Corning Gorilla Glass 3</value>
+          </feature>
+          <feature>
+            <name>Processor</name>
+            <value>Exynos 5 Octa 5410 Quad-core 1.6 GHz Cortex-A15, quad-core 1.2 GHz Cortex-A7</value>
+          </feature>
+        </features>
+      </phone>
+    </phones>
+  </store>
+</stores>

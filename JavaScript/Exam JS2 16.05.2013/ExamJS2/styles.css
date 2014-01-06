@@ -1,0 +1,39 @@
+﻿body {
+    width: 100%;
+}
+h1, h3 {
+    text-align: center;
+    margin: 5px 0;
+    padding: 0;
+}
+div#wrapper {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #c2c6cc;
+}
+div#result, div#second {
+    position: relative;
+    width: 90%;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px auto;
+    text-align: center;
+}
+.image {
+    margin:10px;
+    float:left;
+}
+.album {
+    float:left;
+    width:95%;
+    margin:10px;
+    border: 1px solid black;
+}
+.album::before, .imageGallery::after {
+    content: " ";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear:both;
+}

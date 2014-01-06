@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 7 - Task 10</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata input#param1 { width:40%; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 7 - Task 10</h1>
+        <h3>Extracts all palindromes (abba, exe, lamal) from a given text string</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">String value</label>
+            <input id="param1" type="text" value="some text or txt in exe. But not Abba, only baba or abba!"/>
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var param1 = new String(document.getElementById('param1').value); // reads the string
+            var foundWords = param1.match(/\b[a-z][a-z]+\b/gi); // global and case insensitive regular expression
+            // finds all words that have at least two characters
+            
+            var result;
+            if (foundWords == null) result = "No palindromes!";
+            else {
+                result = "The palindrome words are: ";
+                for (var i = 0; i < foundWords.length; i++) {// checks for each word found if it is palindrome
+                    var palindrome = true; // assumes that current word is palindrome
+                    for (var j = 0; j < Math.floor(foundWords[i].length / 2) ; j++) {
+                        if (foundWords[i][j] != foundWords[i][foundWords[i].length - 1 - j]) {
+                            // compares each pair of characters on equal distance from the middle of the word (first - last, first+1 - last-1, etc)  
+                            palindrome = false; // if not equal the word is not plindrome
+                            break;
+                        }
+                    }
+                    if (palindrome) result += foundWords[i] + " "; // if palindrome, prints it
+                }
+            }
+
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+    </script>
+</body>
+</html>
+
+ 

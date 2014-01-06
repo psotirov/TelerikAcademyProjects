@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript2 Homework 4 - Task 5</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        #result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript2 Homework 4 - Task 5</h1>
+        <h3>Bouncing ball using canvas</h3>
+        <div id="result">
+            <canvas width="510" height="410">Canvas not supported</canvas>
+        </div>
+     </div>
+    <script type="text/javascript">
+        // the playground
+        var ctx = document.getElementsByTagName("canvas")[0].getContext("2d");
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.fillStyle = "orange";
+        ctx.strokeRect(10, 10, 500, 400);
+
+        var TOP_POS_MAX = 390;
+        var TOP_POS_MIN = 30;
+        var LEFT_POS_MAX = 490;
+        var LEFT_POS_MIN = 30;
+
+        var directionX = 1;
+        var directionY = 1;
+        var currentPosX = 200;
+        var currentPosY = 200;
+
+        setInterval(function () {
+            currentPosY += directionX;
+            currentPosX += directionY;
+            if (currentPosY == TOP_POS_MAX) {
+                directionX *= -1;
+            }
+
+            if (currentPosX == LEFT_POS_MAX) {
+                directionY *= -1;
+            }
+
+            if (currentPosY == TOP_POS_MIN) {
+                directionX *= -1;
+            }
+
+            if (currentPosX == LEFT_POS_MIN) {
+                directionY *= -1;
+            }
+
+            ctx.beginPath();
+            ctx.arc(currentPosX, currentPosY, 10, 0, 2 * Math.PI, false);
+            ctx.fill();
+        }, 5);
+   </script>
+</body>
+</html>
+
+ 

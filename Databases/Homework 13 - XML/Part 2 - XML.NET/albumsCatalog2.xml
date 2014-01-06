@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<catalogue xmlns:cat="urn:albumscat">
+  <album>
+    <name>Thriller</name>
+    <artist>Michael Jackson</artist>
+    <year>1982</year>
+    <producer>Quincy Jones</producer>
+    <price>24</price>
+    <songs>
+      <song>
+        <title>Billie Jean</title>
+        <duration>5</duration>
+      </song>
+      <song>
+        <title>Thriller</title>
+        <duration>4</duration>
+      </song>
+      <song>
+        <title>Human Nature</title>
+        <duration>4</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>American Life</name>
+    <artist>Madonna</artist>
+    <year>2008</year>
+    <producer>Warner Bros.</producer>
+    <price>12</price>
+    <songs>
+      <song>
+        <title>Die Another Day </title>
+        <duration>4</duration>
+      </song>
+      <song>
+        <title>Hollywood</title>
+        <duration>4</duration>
+      </song>
+      <song>
+        <title>Easy Ride</title>
+        <duration>3</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>By The Way</name>
+    <artist>Red Hot Chili Peppers</artist>
+    <year>2002</year>
+    <producer>Rick Rubin</producer>
+    <price>9</price>
+    <songs>
+      <song>
+        <title>Universally Speaking</title>
+        <duration>3</duration>
+      </song>
+      <song>
+        <title>The Zephyr Song</title>
+        <duration>4</duration>
+      </song>
+      <song>
+        <title>On Mercury</title>
+        <duration>3</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>Californication</name>
+    <artist>Red Hot Chili Peppers</artist>
+    <year>1999</year>
+    <producer>Rick Rubin</producer>
+    <price>8</price>
+    <songs>
+      <song>
+        <title>Parallel Universe</title>
+        <duration>3</duration>
+      </song>
+      <song>
+        <title>Around the World</title>
+        <duration>4</duration>
+      </song>
+      <song>
+        <title>This Velvet Glove</title>
+        <duration>3</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>Systematic Chaos</name>
+    <artist>Dream Theater Old</artist>
+    <year>2007</year>
+    <producer>John Petrucci</producer>
+    <price>20</price>
+    <songs>
+      <song>
+        <title>Forsaken</title>
+        <duration>5</duration>
+      </song>
+      <song>
+        <title>Constant Motion</title>
+        <duration>6</duration>
+      </song>
+      <song>
+        <title>The Dark Eternal Night</title>
+        <duration>10</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>Systematic Chaos</name>
+    <artist>Dream Theater Old</artist>
+    <year>2007</year>
+    <producer>John Petrucci</producer>
+    <price>20</price>
+    <songs>
+      <song>
+        <title>Forsaken</title>
+        <duration>5</duration>
+      </song>
+      <song>
+        <title>Constant Motion</title>
+        <duration>6</duration>
+      </song>
+      <song>
+        <title>The Dark Eternal Night</title>
+        <duration>10</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>On The Backs Of Angels</name>
+    <artist>Dream Theater</artist>
+    <year>2011</year>
+    <songs>
+      <song>
+        <title>On The Backs Of Angels</title>
+        <duration>10</duration>
+      </song>
+      <song>
+        <title>Build Me Up, Break Me Down</title>
+        <duration>15</duration>
+      </song>
+      <song>
+        <title>Lost Not Forgotten</title>
+      </song>
+    </songs>
+  </album>
+</catalogue>

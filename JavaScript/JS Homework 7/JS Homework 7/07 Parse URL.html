@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 7 - Task 7</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata input#param1 { width:40%; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 7 - Task 7</h1>
+        <h3>Parses a the given URL to its three parts and outputs it as JSON</h3>
+        <h3>format: [protocol://][server][/resource]</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">URL to parse</label>
+            <input id="param1" type="text" value="http://www.devbg.org/forum/index.php"/>
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var param1 = new String(document.getElementById('param1').value); // reads the string
+            var result = { protocol: "", server: "", resource: "" }; // creates empty JSON object
+            var index;
+            if ((index = param1.indexOf("://")) > 0) { // we have protocol
+                result.protocol = param1.substr(0, index); // takes it
+                param1 = param1.slice(index + 3); // and removes it from the input string
+            }
+            if ((index = param1.indexOf("/")) >= 0) { // we have server and resource
+                result.server = param1.substr(0, index); // takes the server
+                result.resource = param1.slice(index); // and takes the rest as resource
+            } else { // otherwise everything is server
+                result.server = param1;
+            }
+
+            document.getElementById('result').innerHTML = "<br />{ protocol: " + result.protocol +
+                ",<br />server: " + result.server + ",<br />resource: " + result.resource + " }<br /><br />";
+        }
+    </script>
+</body>
+</html>
+
+ 

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Video_Player</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- Video_Player references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/playlist-utils.js"></script>
+    <script src="/js/default.js"></script>
+</head>
+<body>
+        <!-- Simple template for the ListView instantiation  -->
+        <div id="listIconTextTemplate" data-win-control="WinJS.Binding.Template">
+            <div class="listIconTextItem">
+                <img src="#" class="listIconTextItem-Image" data-win-bind="src: thumbnail" />
+                <div class="listIconTextItem-Detail">
+                    <h4 data-win-bind="innerText: title"></h4>
+                    <h6 data-win-bind="innerText: type"></h6>
+                </div>
+            </div>
+        </div>  
+
+        <!-- The declarative markup necesary for ListView instantiation -->
+        <!-- Call WinJS.UI.processAll() in your initialization code -->
+        <div id="playlist-listView-container" 
+            class="win-selectionstylefilled"
+            data-win-control="WinJS.UI.ListView" 
+            data-win-options="{ 
+                itemDataSource: VideosData.PlayList.dataSource, 
+                itemTemplate: select('#listIconTextTemplate'),
+                selectionMode: 'single',
+                tapBehavior: 'directSelect'
+            }">
+        </div>
+
+    <div id="video-container">
+        <video id="video-frame" controls="controls"></video>
+    </div>
+    <div id="controls-container">
+        <div id="video-controls">
+            <button id="playbackStop">Stop playback</button>
+            <button id="playbackStart">Start playback</button>
+        </div>
+        <div id="playlist-controls">
+            <button id="openPlaylist">Open Playlist from file</button>
+            <button id="savePlaylist">Save Playlist to file</button>
+            <button id="addVideoFile">Add Video to Playlist</button>
+            <button id="removeVideoFile">Remove Video from Playlist</button>
+        </div>
+    </div>
+</body>
+</html>

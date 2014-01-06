@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.2.FontSize.Slider", "1.Slider\1.2.FontSize.Slider.csproj", "{ACA4E186-6F9D-4AB3-80F8-1BA0241A0951}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.TextBoxColoring", "3.TextBoxColoring\3.TextBoxColoring.csproj", "{4450DC87-902F-4C49-BCA8-12C8AD647C6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.PersonAge", "4.PersonAge\4.PersonAge.csproj", "{03F973C6-F62C-4865-BB6F-6318E36263AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACA4E186-6F9D-4AB3-80F8-1BA0241A0951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACA4E186-6F9D-4AB3-80F8-1BA0241A0951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACA4E186-6F9D-4AB3-80F8-1BA0241A0951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACA4E186-6F9D-4AB3-80F8-1BA0241A0951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4450DC87-902F-4C49-BCA8-12C8AD647C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4450DC87-902F-4C49-BCA8-12C8AD647C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4450DC87-902F-4C49-BCA8-12C8AD647C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4450DC87-902F-4C49-BCA8-12C8AD647C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03F973C6-F62C-4865-BB6F-6318E36263AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F973C6-F62C-4865-BB6F-6318E36263AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F973C6-F62C-4865-BB6F-6318E36263AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F973C6-F62C-4865-BB6F-6318E36263AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

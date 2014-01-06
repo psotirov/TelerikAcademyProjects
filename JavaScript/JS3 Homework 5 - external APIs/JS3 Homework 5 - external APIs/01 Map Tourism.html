@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript3 Homework 5 - Task 1</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4, ul { text-align:center; margin:5px 0; padding:0; }
+        #wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        #result { position:relative; width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        #result ul { list-style-type: none;  margin: 0 70px; }
+        #result ul li { display:inline; line-height:25px; padding: 0 10px; margin:0 20px 10px 0; background-color:#6d6; }
+        .arrow { text-decoration:none; display:block; width:50px; height:20px; background-color:#6d6; color:#000; font-weight:bold; margin:10px; position:absolute; top:0 }
+        #left { left:0; }
+        #right { right:0 }
+        #map-canvas { margin: 0 70px; height: 400px; }        
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript3 Homework 5 - Task 1</h1>
+        <h3>Google Maps Tourism</h3>
+        <div id="result">
+            <a id="left" class="arrow" href="#">&lt;=</a>
+            <a id="right" class="arrow" href="#">=&gt;</a>
+            <div id="map-canvas"></div>
+        </div>
+    </div>
+    <script src="script/jquery-2.0.2.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="script/map-tourism.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var tourism = Object.create(GoogleMaps);
+            var maps = [
+                { city: "Sofia", info: "Sofia is the major city in Bulgaria", lat: 42.724, lng: 23.318 },
+                { city: "Brussels", info: "Brussels is the major city in Belgium", lat: 50.861, lng: 4.350 },
+                { city: "Stockholm", info: "Stockholm is the major city in Sweden", lat: 59.346, lng: 18.068 },
+                { city: "London", info: "London is the major city in UK", lat: 51.534, lng: -0.124 },
+                { city: "New York", info: "New York is the major city in USA", lat: 40.740, lng: -74.008 },
+                { city: "Tokyo", info: "Tokyo is the major city in Japan", lat: 35.718, lng: 139.687 },
+                { city: "Sidney", info: "Sidney is the major city in Australia", lat: -33.816, lng: 151.200 },
+                { city: "Beijing", info: "Beijing is the major city in China", lat: 40.010, lng: 116.410 },
+                { city: "Moscow", info: "Moscow is the major city in Russia", lat: 55.794, lng: 37.610 },
+                { city: "Istanbul", info: "Istanbul is the major city in Turkey", lat: 41.032, lng: 28.975 },
+            ];
+            tourism.init("map-canvas", maps, "#left", "#right");
+            tourism.render();
+
+
+        });
+    </script>
+</body>
+</html>

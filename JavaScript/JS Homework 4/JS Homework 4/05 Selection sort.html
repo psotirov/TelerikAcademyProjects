@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Homework 4 - Task 5</title>
+    <meta charset="utf-8" />
+    <style>
+        body { width: 100%; }
+        h1, h3, h4 { text-align:center; margin:5px 0; padding:0; }
+        div#wrapper { width:90%; height:100%; margin:0 auto; background-color:#c2c6cc; }
+        div#indata, div#result { width: 90%; border: 1px solid black; padding: 5px; margin:5px auto; text-align:center; }
+        div#indata * { display:inline-block; float:left; margin:10px; }
+        div#indata::after { content: ""; display: block; height: 0; overflow: hidden; clear:both; }
+    </style>   
+</head>
+<body>
+    <div id="wrapper">
+        <h1>JavaScript Homework 4 - Task 5</h1>
+        <h3>Selection sort of an array</h3>
+        <h4>Please enter input data</h4>
+        <div id="indata"> 
+            <label for="param1">Array values (separated by ',')</label>
+            <input id="param1" type="text" />
+            <button id="run" onclick="result()">Run Script!</button>
+        </div> 
+        <h4>The result is:</h4>
+        <div id="result"></div>
+     </div>
+    <script type="text/javascript">
+        function result() {
+            var arr = new Array();
+            arr = document.getElementById('param1').value.split(","); // takes an input agruments
+
+            for (var idx = 0; idx < arr.length-1; idx++) { // iterates N-1 times in order to find each min number (idx is number of sorted elements)
+                var min = idx; // at the begining the min candidate is the last element in sorted portion 
+                for (var i = idx+1; i < arr.length; i++) // iterates through unsorted portion of the array 
+                    if (arr[i] < arr[min]) min = i; // looking for minimal array value only at values that are not selected as max element previously 
+ 
+                // now we have the min element of the unsorted portion
+                if (min > idx) { // if there is a smaller element in the unsorted portion compared with the last element of sorted portion
+                    var temp = arr[idx]; // swaps those elements
+                    arr[idx] = arr[min];
+                    arr[min] = temp;
+                }
+            }
+
+            var result = "Sorted array: {" + arr.join(", ") + "}"; // prepares the output for the array
+ 
+            document.getElementById('result').innerHTML = "<br />" + result + "<br /><br />";
+        }
+    </script>
+</body>
+</html>
+
+ 
